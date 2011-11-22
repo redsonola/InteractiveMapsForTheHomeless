@@ -3,11 +3,17 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="libs/Java/core.jar"/>
-	<classpathentry kind="lib" path="/Users/courtney/Documents/eclipse/workspace/Maps_and_then_some/libs/mapping/lib/GLGraphics.jar"/>
 	<classpathentry kind="lib" path="/Users/courtney/Documents/eclipse/workspace/Maps_and_then_some/libs/mapping/lib/log4j-1.2.15.jar"/>
-	<classpathentry kind="lib" path="/Users/courtney/Documents/eclipse/workspace/Maps_and_then_some/libs/mapping/lib/Unfolding.jar"/>
 	<classpathentry kind="lib" path="libs/Java/modes/java/libraries/opengl/library/opengl.jar"/>
 	<classpathentry kind="lib" path="libs/Java/modes/java/libraries/opengl/library/gluegen-rt.jar"/>
 	<classpathentry kind="lib" path="libs/Java/modes/java/libraries/opengl/library/jogl.jar"/>
+	<classpathentry kind="lib" path="libs/mapping/lib/GLGraphics.jar"/>
+	<classpathentry kind="lib" path="libs/mapping/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="libs/mapping/lib/Unfolding.jar"/>
+	<classpathentry kind="lib" path="libs/wiimote_lib/bluecove-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/wiimote_lib/Loc.jar"/>
+	<classpathentry kind="lib" path="libs/wiimote_lib/oscP5.jar"/>
+	<classpathentry kind="lib" path="libs/wiimote_lib/WiiRemoteJ.jar"/>
+	<classpathentry kind="lib" path="libs/wiimote_lib/wrj4P5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
