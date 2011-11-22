@@ -1,0 +1,16 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.*;
+
+public class HomelessMapProject {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+

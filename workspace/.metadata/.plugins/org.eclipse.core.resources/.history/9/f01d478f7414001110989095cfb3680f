@@ -1,0 +1,34 @@
+package com.somethingfurry.maps_and_then_some;
+import processing.core.*;
+
+import processing.opengl.*;
+import codeanticode.glgraphics.*;
+import de.fhpotsdam.unfolding.*;
+import de.fhpotsdam.unfolding.geo.*;
+import de.fhpotsdam.unfolding.utils.*;
+import de.fhpotsdam.unfolding.providers.*;
+
+de.fhpotsdam.unfolding.Map map;
+
+public class HomelessMapProject extends PApplet {
+//	An array of stripes
+	Stripe[] stripes = new Stripe[50];
+
+	public void setup() {
+		size(200,200);
+		// Initialize all "stripes"
+		for (int i = 0; i < stripes.length; i++) {
+			stripes[i] = new Stripe(this);
+		}
+	}
+
+	public void draw() {
+		background(100);
+		// Move and display all "stripes"
+		for (int i = 0; i < stripes.length; i++) {
+			stripes[i].move();
+			stripes[i].display();
+		}
+	}
+}
+

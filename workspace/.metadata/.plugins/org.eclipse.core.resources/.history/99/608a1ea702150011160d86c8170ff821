@@ -1,0 +1,49 @@
+
+package com.somethingfurry.maps_and_then_some;
+
+import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.providers.Google;
+import de.fhpotsdam.unfolding.utils.MapUtils;
+import processing.core.PApplet;
+
+public class MyInteractiveMap extends PApplet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8591262193655922653L;
+	PApplet parent; // The parent PApplet that we will render ourselves onto
+	de.fhpotsdam.unfolding.Map map;
+	
+	
+	MyInteractiveMap(PApplet p) {
+		parent = p;		
+
+		map = new de.fhpotsdam.unfolding.Map(this, "map1", 10, 10, 385, 580, true, false, new Microsoft.AerialProvider());
+		MapUtils.createDefaultEventDispatcher(this, map);
+		map.setTweening(false);		
+	}
+
+	// Draw stripe
+	void display() {
+		  map.draw();
+
+		  parent.noStroke();
+		  parent.fill(215, 0, 0, 100);
+
+		  // Shows geo-location at mouse position
+		  Location location = map.getLocationFromScreenPosition(mouseX, mouseY);
+		  parent.text(location.toString(), mouseX, mouseY);
+
+		  // Shows marker at Berlin location
+		  Location loc = new Location(52.5f, 13.4f);
+		  float xy[] = map.getScreenPositionFromLocation(loc);
+		  parent.ellipse(xy[0], xy[1], 20, 20);
+	}
+	
+	void move(){
+		//nothing
+	}
+		
+} 
+
+

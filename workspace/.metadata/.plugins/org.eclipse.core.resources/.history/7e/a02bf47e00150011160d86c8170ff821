@@ -1,0 +1,28 @@
+package com.somethingfurry.maps_and_then_some;
+import processing.core.*;
+
+import processing.opengl.*;
+import codeanticode.glgraphics.*;
+import de.fhpotsdam.unfolding.*;
+import de.fhpotsdam.unfolding.geo.*;
+import de.fhpotsdam.unfolding.utils.*;
+import de.fhpotsdam.unfolding.providers.*;
+
+public class HomelessMapProject extends PApplet {
+	MyInteractiveMap m1;
+
+
+	public void setup() {
+		  size(800, 600, GLConstants.GLGRAPHICS);
+		  m1 = new MyInteractiveMap(this); 
+
+	}
+
+	public void draw() {
+		  background(0);
+		  m1.display(); 
+
+	}
+}
+
+
