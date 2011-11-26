@@ -1,5 +1,7 @@
 package com.somethingfurry.maps_and_then_some;
 
+import java.util.ArrayList;
+
 import processing.core.*;
 
 import processing.opengl.*;
@@ -40,6 +42,8 @@ import oscP5.*;
 	 private SmoothedValue posY; //the current position of hte wii - cursor
 	 private boolean isPanning = false;  //whether we are in panning mode... if so pan to where cursor is
 	 
+	 private ArrayList<LocationMapMarker> markers; 
+	 
 	 //analogous to setup in the processing file.  create shit.  set it up!
 	 public void setup(){
 		 size(600, 500, GLConstants.GLGRAPHICS);
@@ -64,7 +68,22 @@ import oscP5.*;
 		  //create the current x, y pos of screen
 		  posX = new SmoothedValue();
 		  posY = new SmoothedValue();
-
+		  
+		  markers = new ArrayList<LocationMapMarker>();
+		  initMarkers();
+		  
+		  System.out.println("zoom level is: " + map.getZoomLevel());
+	 }
+	 
+	 //void init the markers, that is add in all the data
+	 void initMarkers()
+	 {
+		 LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix, this, map);
+		 LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "video_icon.png");
+		 
+		 markers.add(zMarker);
+		 markers.add(pMarker);
+		 
 	 }
 	 
 	 //all purpose OSC event handler for un-plugged OSC events
@@ -153,6 +172,11 @@ import oscP5.*;
 			pan(); 
 		 } 
 		 
+		 //draw
+		 for (int i=0; i<markers.size(); i++)
+		 {
+			 markers.get(i).draw();
+		 }
 		 
 	 }
 	 
