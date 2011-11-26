@@ -17,14 +17,16 @@ import oscP5.*;
 
  public class HomelessMapProject extends PApplet {
 
-	 Map map;
-	 boolean isZoomed = false; 
-	 private int zoom = 10;
-	 Location phoenix = new Location(33.43f, -112.02f);
-	 Location curLocation = phoenix; 
-	 OscP5 oscP5;
-	 public static final int OSC_PORT = 9000; //max port coz I'm lazy
+	 Map map; //the map display and functionality
+	 boolean isZoomed = false;  //whether mapped is zoomed or not -- not used, legacy!
+	 private int zoom = 10; //the current zoom of the map
+	 Location phoenix = new Location(33.43f, -112.02f); //the location of phoenix
+	 Location curLocation = phoenix; //the current location of the map... this is latitude and longitude
+	 
+	 OscP5 oscP5; //object to enable OSC shiz
+	 public static final int OSC_PORT = 9000; //max port coz I'm lazy //the port to listen for OSC messages on
 
+	 //OSC messages incoming from wiimote / osculator	
 	 public static final String ADDR_WIIPLUS = "/wii/1/button/Plus";
 	 public static final String ADDR_WIIMINUS = "/wii/1/button/Minus";
 	 public static final String ADDR_WIILEFT = "/wii/1/button/Left";
@@ -34,10 +36,11 @@ import oscP5.*;
 	 public static final String ADDR_WIIA = "/wii/1/button/A";
 	 
 	 
-	 private SmoothedValue posX;
-	 private SmoothedValue posY;
-	 private boolean isPanning = false;  
+	 private SmoothedValue posX; //the current position of the wii - cursor
+	 private SmoothedValue posY; //the current position of hte wii - cursor
+	 private boolean isPanning = false;  //whether we are in panning mode... if so pan to where cursor is
 	 
+	 //analogous to setup in the processing file.  create shit.  set it up!
 	 public void setup(){
 		 size(600, 500, GLConstants.GLGRAPHICS);
 		 smooth();  
@@ -53,19 +56,25 @@ import oscP5.*;
 		  map.zoomAndPanTo(phoenix, zoom);
 		  OscP5 oscP5 = new OscP5(this,OSC_PORT);		  
 		  
-		  // handle the simple messages first. 
+		  // connect event handlers to OSC (re: wii events)  
 		  oscP5.plug(this,"zoomIn", ADDR_WIIPLUS);
 		  oscP5.plug(this, "zoomOut", ADDR_WIIMINUS);
 		  oscP5.plug(this, "panning", ADDR_WIIA);
 		  
+		  //create the current x, y pos of screen
 		  posX = new SmoothedValue();
 		  posY = new SmoothedValue();
 
 	 }
 	 
+	 //all purpose OSC event handler for un-plugged OSC events
+	 //I handle the acceleration params from the wii here, since I was trying to use IR to control the cursor
+	 //but IR SUCKS.
 	 void oscEvent(OscMessage message) {
 		float x;
 		float y;
+		
+		//the IR codesz
 		/*  if( message.checkAddrPattern(ADDR_WIIIR) )
 		{
 		    x = (float) message.get(0).floatValue();
@@ -76,6 +85,8 @@ import oscP5.*;
 			System.out.println("ir_x: "+  x + "  ir_y:"  + y + "posX: "+  posX + "posY:"  + posY);
 		}
 		else */
+		
+		//use the acceleration to change position.
 		if( message.checkAddrPattern(ADDR_WIIACCEL) )
 		{
 		    y = (float) message.get(0).floatValue();
@@ -91,6 +102,7 @@ import oscP5.*;
 			
 	 }
  
+	 //increase zoom -- this is the wii.PLUS event handler
 	  void zoomIn(int isDown)
 	  {		
 		  if (isDown == 1)
@@ -100,6 +112,7 @@ import oscP5.*;
 		  }
 	  }
 	  
+	  //decrease zoom -- this is the wii.MINUS event handler	  
 	  void zoomOut(int isDown)
 	  {   
 		  if (isDown == 1)
@@ -109,6 +122,7 @@ import oscP5.*;
 		  }
 	  }	 
   
+	  //pan while the user halds the wii.A button down, and stop and finalize pan when it comes up
 	  public void panning(int isDown)
 	  {
 		  	isPanning = ( isDown == 1 ); 
@@ -119,6 +133,7 @@ import oscP5.*;
 		  	}
 	  }
 	  
+	  //pan while wii.A is down (when panning flag is on) but at a reduced sampling than the draw
 	  public void pan()
 	  {
 		  //only check every couple milliseconds
@@ -128,6 +143,7 @@ import oscP5.*;
 		  }
 	  }
 	  
+	 //this is where we draw / dislay shit. 
 	 public void draw(){
 		 map.draw();
 		 ellipse(posX.value(), posY.value(), 10, 10);
@@ -158,6 +174,7 @@ import oscP5.*;
 		 
 	 }
 	 
+	 //if I wanted to add key event handling
 	 public void keyPressed()
 	 {
 		 if (key == ' ')
