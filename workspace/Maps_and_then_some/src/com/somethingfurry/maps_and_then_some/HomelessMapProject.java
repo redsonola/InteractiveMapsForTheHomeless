@@ -31,9 +31,12 @@ import oscP5.*;
 	 public static final String ADDR_WIIRIGHT = "/wii/1/button/Right";
 	 public static final String ADDR_WIIACCEL = "/wii/1/accel/pry";
 	 public static final String ADDR_WIIIR = "/wii/1/ir";
+	 public static final String ADDR_WIIA = "/wii/1/button/A";
+	 
 	 
 	 private SmoothedValue posX;
 	 private SmoothedValue posY;
+	 private boolean isPanning = false; 
 	 	 
 	 
 	 
@@ -51,12 +54,13 @@ import oscP5.*;
 				  	
 		  //zoom and pan to Phoenix
 		  map.zoomAndPanTo(phoenix, zoom);
-		  OscP5 oscP5 = new OscP5(this,OSC_PORT);
-		  
+		  OscP5 oscP5 = new OscP5(this,OSC_PORT);		  
 		  
 		  // handle the simple messages first. 
 		  oscP5.plug(this,"zoomIn", ADDR_WIIPLUS);
 		  oscP5.plug(this, "zoomOut", ADDR_WIIMINUS);
+		  oscP5.plug(this, "panning", ADDR_WIIA);
+		  
 		  posX = new SmoothedValue();
 		  posY = new SmoothedValue();
 
@@ -81,36 +85,65 @@ import oscP5.*;
 			x = (float) message.get(1).floatValue();  
 			
 			posX.update( map(x, 0, 1, 0, width) ) ;
-			posY.update( map(y, 0, 1, 0, height)) ;
+			posY.update(height - map(y, 0, 1, 0, height)) ;
 			System.out.println("posX: "+  posX.value() + "posY:"  + posY.value());
 
 		}		
 			
 	 }
  
-	  void zoomIn(int i)
-	  {
-		  zoom++;
-		  map.zoomAndPanTo(curLocation, zoom);  
+	  void zoomIn(int isDown)
+	  {		
+		  if (isDown == 1)
+		  {
+			  zoom++;
+			  map.zoomAndPanTo(curLocation, zoom);  
+		  }
 	  }
 	  
-	  void zoomOut(int i)
-	  {
-		  if (zoom > 0) zoom--;
-		  map.zoomAndPanTo(curLocation, zoom);	
-		  
+	  void zoomOut(int isDown)
+	  {   
+		  if (isDown == 1)
+		  {		  
+			  if (zoom > 0) zoom--;
+			  map.zoomAndPanTo(curLocation, zoom);	
+		  }
 	  }	 
   
+	  public void panning(int isDown)
+	  {
+		  	isPanning = ( isDown == 1 ); 
+		  	if (!isPanning)
+		  	{
+				map.panTo(posX.value(), posY.value()); //perform final pan
+
+		  	}
+	  }
+	  
+	  public void pan()
+	  {
+		  //only check to every last second
+		  if (millis() % 25 == 0)
+		  {
+			  map.panTo(posX.value(), posY.value());
+		  }
+	  }
+	  
 	 public void draw(){
 		 map.draw();
-		 ellipse(posX.value(), posY.value(), 20, 20);
-
+		 ellipse(posX.value(), posY.value(), 10, 10);
+		 
+		 if (isPanning)
+		 {
+			pan(); 
+		 } 
+		 
 		 
 	 }
 	 
 	 public void mouseClicked()
 	 {
-		 if (!isZoomed)
+/*		 if (!isZoomed)
 		 {
 			 // Shows geo-location at mouse position
 			 Location location = map.getLocationFromScreenPosition(mouseX, mouseY);	 
@@ -122,6 +155,7 @@ import oscP5.*;
 			 map.zoomAndPanTo(phoenix, 10); 
 			 isZoomed = false;
 		 }
+		 */
 	 }
 	 
 	 public void keyPressed()
