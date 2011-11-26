@@ -36,10 +36,7 @@ import oscP5.*;
 	 
 	 private SmoothedValue posX;
 	 private SmoothedValue posY;
-	 private boolean isPanning = false; 
-	 	 
-	 
-	 
+	 private boolean isPanning = false;  
 	 
 	 public void setup(){
 		 size(600, 500, GLConstants.GLGRAPHICS);
@@ -86,6 +83,8 @@ import oscP5.*;
 			
 			posX.update( map(x, 0, 1, 0, width) ) ;
 			posY.update(height - map(y, 0, 1, 0, height)) ;
+			curLocation = map.getLocationFromScreenPosition(posX.value(), posY.value());
+					
 			System.out.println("posX: "+  posX.value() + "posY:"  + posY.value());
 
 		}		
@@ -122,7 +121,7 @@ import oscP5.*;
 	  
 	  public void pan()
 	  {
-		  //only check to every last second
+		  //only check every couple milliseconds
 		  if (millis() % 25 == 0)
 		  {
 			  map.panTo(posX.value(), posY.value());
@@ -141,7 +140,7 @@ import oscP5.*;
 		 
 	 }
 	 
-	 public void mouseClicked()
+	 public void mouseClicked() //disabled for now
 	 {
 /*		 if (!isZoomed)
 		 {
@@ -156,6 +155,7 @@ import oscP5.*;
 			 isZoomed = false;
 		 }
 		 */
+		 
 	 }
 	 
 	 public void keyPressed()
