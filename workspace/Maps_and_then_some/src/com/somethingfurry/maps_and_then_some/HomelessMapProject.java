@@ -10,37 +10,101 @@ import de.fhpotsdam.unfolding.utils.*;
 import de.fhpotsdam.unfolding.providers.*;
 import de.fhpotsdam.unfolding.mapdisplay.MapDisplayFactory;
 
-//import these libraries for the wii
-import lll.Loc.*;
-import lll.wrj4P5.*; 
 
-
-
+//import these libraries for the wii functionality... using OSCulator, etc.
+import netP5.*;
+import oscP5.*; 
 
  public class HomelessMapProject extends PApplet {
 
 	 Map map;
 	 boolean isZoomed = false; 
+	 private int zoom = 10;
 	 Location phoenix = new Location(33.43f, -112.02f);
-	 Wrj4P5 wii; 
+	 Location curLocation = phoenix; 
+	 OscP5 oscP5;
+	 public static final int OSC_PORT = 9000; //max port coz I'm lazy
 
+	 public static final String ADDR_WIIPLUS = "/wii/1/button/Plus";
+	 public static final String ADDR_WIIMINUS = "/wii/1/button/Minus";
+	 public static final String ADDR_WIILEFT = "/wii/1/button/Left";
+	 public static final String ADDR_WIIRIGHT = "/wii/1/button/Right";
+	 public static final String ADDR_WIIACCEL = "/wii/1/accel/pry";
+	 public static final String ADDR_WIIIR = "/wii/1/ir";
+	 
+	 private SmoothedValue posX;
+	 private SmoothedValue posY;
+	 	 
+	 
+	 
+	 
 	 public void setup(){
 		 size(600, 500, GLConstants.GLGRAPHICS);
-		 smooth();
+		 smooth();  
+		 
+		 map = new de.fhpotsdam.unfolding.Map(this, "map", 0, 0, 600, 500, true, false, new Microsoft.AerialProvider());
+				  	MapUtils.createDefaultEventDispatcher(this, map);
+		 /*
 		 map = new de.fhpotsdam.unfolding.Map(this, "map", 0, 0, 600, 500, true, false, 
 				  	new OpenStreetMap.CloudmadeProvider(MapDisplayFactory.OSM_API_KEY, 30635));
-				  	MapUtils.createDefaultEventDispatcher(this, map);
+		*/
 				  	
-		 
 		  //zoom and pan to Phoenix
-		  map.zoomAndPanTo(phoenix, 10);
+		  map.zoomAndPanTo(phoenix, zoom);
+		  OscP5 oscP5 = new OscP5(this,OSC_PORT);
 		  
-		   wii = new Wrj4P5(this); //create wii object
+		  
+		  // handle the simple messages first. 
+		  oscP5.plug(this,"zoomIn", ADDR_WIIPLUS);
+		  oscP5.plug(this, "zoomOut", ADDR_WIIMINUS);
+		  posX = new SmoothedValue();
+		  posY = new SmoothedValue();
 
 	 }
+	 
+	 void oscEvent(OscMessage message) {
+		float x;
+		float y;
+		/*  if( message.checkAddrPattern(ADDR_WIIIR) )
+		{
+		    x = (float) message.get(0).floatValue();
+			y = (float) message.get(1).floatValue();  
+			
+			posX = (int) (map(x, 0, 1, 0, width) );
+			posY = (int) (map(y, 0, 1, 0, height) );
+			System.out.println("ir_x: "+  x + "  ir_y:"  + y + "posX: "+  posX + "posY:"  + posY);
+		}
+		else */
+		if( message.checkAddrPattern(ADDR_WIIACCEL) )
+		{
+		    y = (float) message.get(0).floatValue();
+			x = (float) message.get(1).floatValue();  
+			
+			posX.update( map(x, 0, 1, 0, width) ) ;
+			posY.update( map(y, 0, 1, 0, height)) ;
+			System.out.println("posX: "+  posX.value() + "posY:"  + posY.value());
+
+		}		
+			
+	 }
+ 
+	  void zoomIn(int i)
+	  {
+		  zoom++;
+		  map.zoomAndPanTo(curLocation, zoom);  
+	  }
+	  
+	  void zoomOut(int i)
+	  {
+		  if (zoom > 0) zoom--;
+		  map.zoomAndPanTo(curLocation, zoom);	
+		  
+	  }	 
   
 	 public void draw(){
 		 map.draw();
+		 ellipse(posX.value(), posY.value(), 20, 20);
+
 		 
 	 }
 	 
@@ -64,47 +128,9 @@ import lll.wrj4P5.*;
 	 {
 		 if (key == ' ')
 		 {
-			 wii.connect(1); //connect performer 1
 		 }
 	 }
 	 
-	 
-	  void buttonPressed(RimokonEvent evt, int rid) 
-	  { 
-	    
-	    if (evt.wasPressed(RimokonEvent.TWO)) 
-	    {
-	    }
-	    if (evt.wasPressed(RimokonEvent.ONE)) 
-	    {
-	    }
-	    if (evt.wasPressed(RimokonEvent.B)) 
-	    {
-	    }
-	    if (evt.wasPressed(RimokonEvent.A)) 
-	    {
-	    }
-	    if (evt.wasPressed(RimokonEvent.MINUS)) {
-	    }
-	    if (evt.wasPressed(RimokonEvent.HOME)) 
-	    {
-	
-	    } 
-	    if (evt.wasPressed(RimokonEvent.LEFT)) {
-	      }
-	    if (evt.wasPressed(RimokonEvent.RIGHT)) {
-	    }
-	    if (evt.wasPressed(RimokonEvent.DOWN)){
-
-	    }
-	    if (evt.wasPressed(RimokonEvent.UP)) 
-	    {
-	    }
-	     if (evt.wasPressed(RimokonEvent.PLUS)) 
-	     {
-	     }
-	    } 
-
 
  }
 
