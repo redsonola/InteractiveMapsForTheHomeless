@@ -1,0 +1,23 @@
+package com.somethingfurry.maps_and_then_some;
+
+public class AudioLocationMapMarker extends LocationMapMarker {
+	
+	AudioLocationMapMarker()
+	{
+		
+		
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		
+		
+	}
+	
+}

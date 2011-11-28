@@ -1,0 +1,64 @@
+package com.somethingfurry.maps_and_then_some;
+
+import java.awt.Color;
+
+import processing.core.PApplet;
+import processing.core.PImage;
+import de.fhpotsdam.unfolding.Map;
+import de.fhpotsdam.unfolding.geo.Location;
+
+public class PhotoLocationMapMarker extends MediaMarker {
+		
+	private String _photoFileName;
+	private int _pWidth; 
+	private int _pHeight; 
+	private boolean _useDefaults = false; 
+	private String _filetype = "png"; //gif, jpg, etc. as well
+	
+	private static final int BORDER_SIZE = 20; 
+	
+	PhotoLocationMapMarker(Location location, PApplet display, Map map)
+	{
+		super(location, display, map, PHOTO_ICON);	
+	}
+	
+	public void setPhoto(String filename, String filetype, int w, int h)
+	{
+		_photoFileName = filename; 
+		_filetype = filetype; 
+		resize(w, h);
+	}
+
+	public void setPhoto(String filename, String filetype)
+	{
+		setPhoto(filename, filetype, 0, 0); 
+		_useDefaults = true; 
+	}
+	
+	public void resize(int w, int h)
+	{
+		_useDefaults = false;
+		_pWidth = w;
+		_pHeight = h; 
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		//load and create image
+		PImage img = _display.loadImage(_photoFileName, _filetype);
+		if (_useDefaults)
+		{
+			_pWidth = img.width; 
+			_pHeight = img.height;
+		}
+		
+		int[] xy = new int[2];
+		xy = center(_pWidth+BORDER_SIZE, _pHeight+BORDER_SIZE);
+		
+		_display.fill(0, 0, 0, 100);
+		_display.rect(xy[0], xy[1], _pWidth+BORDER_SIZE, _pHeight+BORDER_SIZE);
+		_display.image(img, xy[0]-BORDER_SIZE,  xy[1]-BORDER_SIZE, _pWidth, _pHeight);
+	}
+	
+}

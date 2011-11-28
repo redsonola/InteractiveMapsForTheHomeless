@@ -1,0 +1,45 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import processing.core.PImage;
+import de.fhpotsdam.unfolding.Map;
+import de.fhpotsdam.unfolding.geo.Location;
+
+public class PhotoLocationMapMarker extends MediaMarker {
+		
+	private String _photoFileName;
+	private int _pWidth; 
+	private int _pHeight; 
+	private boolean useDefaults = false; 
+	private String _filetype = "png"; //gif, jpg, etc. as well
+	
+	PhotoLocationMapMarker(Location location, PApplet display, Map map)
+	{
+		super(location, display, map, PHOTO_ICON);	
+	}
+	
+	public void setPhoto(String filename, String filetype, int w, int h)
+	{
+		_photoFileName = filename; 
+		_pWidth = w;
+		_pHeight = h; 
+		_filetype = filetype; 
+	}
+
+	//TODO - see if you can just display 
+	public void setPhoto(String filename, String filetype)
+	{
+		setPhoto(filename, filetype, 0, 0); 
+		useDefaults = true; 
+	}
+	
+	
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		PImage img = _display.loadImage(_photoFileName, _filetype);
+		
+	}
+	
+}

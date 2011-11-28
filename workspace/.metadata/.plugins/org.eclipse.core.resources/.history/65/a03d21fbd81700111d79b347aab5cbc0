@@ -1,0 +1,43 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.opengl.*;
+import codeanticode.glgraphics.*;
+import de.fhpotsdam.unfolding.*;
+import de.fhpotsdam.unfolding.geo.*;
+import de.fhpotsdam.unfolding.utils.*;
+import de.fhpotsdam.unfolding.providers.*;
+import de.fhpotsdam.unfolding.mapdisplay.MapDisplayFactory;import processing.core.*;
+ 
+
+public class LocationMapMarker {
+	
+	public enum MediaType { PHOTO, VIDEO, AUDIO, STORY, ZOOMED_OUT };
+	protected MediaType _mediaType; 
+	protected Location _location;
+	protected PApplet _display;
+	protected Map _map;
+	
+	LocationMapMarker(Location location, PApplet display, Map map)
+	{
+		_location = location;
+		_display = display; 
+		_map = map;
+	}
+	
+	public void draw()
+	{
+		  _display.fill(215, 0, 0, 100);
+		  
+		  float xy[] = _map.getScreenPositionFromLocation(_location);
+		  _display.ellipse(xy[0], xy[1], 20, 20);
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+				
+	}
+	
+}
+
+

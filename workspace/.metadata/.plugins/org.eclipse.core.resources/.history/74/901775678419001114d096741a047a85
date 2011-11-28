@@ -1,0 +1,26 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import de.fhpotsdam.unfolding.Map;
+import de.fhpotsdam.unfolding.geo.Location;
+import ddf.minim.*;
+
+public class AudioLocationMapMarker extends MediaMarker {
+	
+	private String _filename; 
+	private Minim minim; 
+	
+	AudioLocationMapMarker(Location location, PApplet display, Map map)
+	{
+		super(location, display, map, AUDIO_ICON);	
+		minim = new Minim(); 
+
+	}	
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		
+	}
+	
+}

@@ -1,0 +1,23 @@
+package com.somethingfurry.maps_and_then_some;
+
+public class VideoLocationMapMarker extends LocationMapMarker {
+	
+	VideoLocationMapMarker()
+	{
+		
+		
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		
+		
+	}
+	
+}

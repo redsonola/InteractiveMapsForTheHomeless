@@ -1,0 +1,34 @@
+package com.somethingfurry.maps_and_then_some;
+
+import codeanticode.glgraphics.*;
+import de.fhpotsdam.unfolding.*;
+import de.fhpotsdam.unfolding.geo.*;
+import de.fhpotsdam.unfolding.utils.*;
+import de.fhpotsdam.unfolding.providers.*;
+import de.fhpotsdam.unfolding.mapdisplay.MapDisplayFactory;
+
+public class LocationMapMarker {
+	
+	public enum MediaType { PHOTO, VIDEO, AUDIO, STORY };
+	private MediaType _mediaType; 
+	private Location _location;
+	
+	LocationMapMarker()
+	{
+		
+		
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void present()
+	{
+		
+		
+	}
+	
+}

@@ -16,5 +16,13 @@
 	<classpathentry kind="lib" path="libs/wiimote_lib/oscP5.jar"/>
 	<classpathentry kind="lib" path="libs/wiimote_lib/WiiRemoteJ.jar"/>
 	<classpathentry kind="lib" path="libs/wiimote_lib/wrj4P5.jar"/>
+	<classpathentry kind="lib" path="libs/minim/jl1.0.jar"/>
+	<classpathentry kind="lib" path="libs/minim/jsminim.jar"/>
+	<classpathentry kind="lib" path="libs/minim/minim-spi.jar"/>
+	<classpathentry kind="lib" path="libs/minim/minim.jar"/>
+	<classpathentry kind="lib" path="libs/minim/mp3spi1.9.4.jar"/>
+	<classpathentry kind="lib" path="libs/minim/tritonus_aos.jar"/>
+	<classpathentry kind="lib" path="libs/minim/tritonus_share.jar"/>
+	<classpathentry kind="lib" path="libs/video/video.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

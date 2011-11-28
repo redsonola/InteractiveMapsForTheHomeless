@@ -1,0 +1,29 @@
+package com.somethingfurry.maps_and_then_some;
+
+import de.fhpotsdam.unfolding.geo.*;
+
+public class LocationMapMarker {
+	
+	public enum MediaType { PHOTO, VIDEO, AUDIO, STORY, ZOOMED_OUT };
+	private MediaType _mediaType; 
+	private Location _location;
+	
+	LocationMapMarker()
+	{
+		
+		
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void present()
+	{
+		
+		
+	}
+	
+}

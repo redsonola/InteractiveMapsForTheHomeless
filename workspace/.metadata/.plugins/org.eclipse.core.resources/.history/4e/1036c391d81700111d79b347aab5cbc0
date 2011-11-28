@@ -1,0 +1,25 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import de.fhpotsdam.unfolding.geo.Location;
+
+public class StoryLocationMapMarker extends LocationMapMarker {
+	
+	StoryLocationMapMarker(Location location, PApplet display)
+	{
+		super(location, display);
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		
+		
+	}
+	
+}

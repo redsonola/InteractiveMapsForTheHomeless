@@ -1,0 +1,26 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import de.fhpotsdam.unfolding.Map;
+import de.fhpotsdam.unfolding.geo.Location;
+
+public class ImageMapMarker extends MediaMarker {
+	
+	private int _width;
+	private int _height;
+	private boolean _defaults = false;	
+
+	ImageMapMarker(Location location, PApplet display, Map map, int w, int h)
+	{
+		super(location, display, map, PHOTO_ICON);	
+	}
+	
+	ImageMapMarker(Location location, PApplet display, Map map)
+	{
+		this(location, display, map, 0, 0);	
+		_defaults = true; 
+	}	
+	
+
+	
+}

@@ -1,0 +1,28 @@
+package com.somethingfurry.maps_and_then_some;
+
+
+public class LocationMapMarker {
+	
+	public enum MediaType { PHOTO, VIDEO, AUDIO, STORY };
+	private MediaType _mediaType; 
+	private Location _location
+	
+	LocationMapMarker(Loac)
+	{
+		
+		
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void present()
+	{
+		
+		
+	}
+	
+}

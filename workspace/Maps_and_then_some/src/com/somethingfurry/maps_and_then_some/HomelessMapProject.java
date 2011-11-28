@@ -3,7 +3,6 @@ package com.somethingfurry.maps_and_then_some;
 import java.util.ArrayList;
 
 import processing.core.*;
-
 import processing.opengl.*;
 import codeanticode.glgraphics.*;
 import de.fhpotsdam.unfolding.*;
@@ -11,7 +10,8 @@ import de.fhpotsdam.unfolding.geo.*;
 import de.fhpotsdam.unfolding.utils.*;
 import de.fhpotsdam.unfolding.providers.*;
 import de.fhpotsdam.unfolding.mapdisplay.MapDisplayFactory;
-
+import ddf.minim.*;
+import processing.video.*;
 
 //import these libraries for the wii functionality... using OSCulator, etc.
 import netP5.*;
@@ -24,6 +24,7 @@ import oscP5.*;
 	 private int zoom = 10; //the current zoom of the map
 	 Location phoenix = new Location(33.43f, -112.02f); //the location of phoenix
 	 Location curLocation = phoenix; //the current location of the map... this is latitude and longitude
+	 Minim minim; //for audio classes
 	 
 	 OscP5 oscP5; //object to enable OSC shiz
 	 public static final int OSC_PORT = 9000; //max port coz I'm lazy //the port to listen for OSC messages on
@@ -35,8 +36,7 @@ import oscP5.*;
 	 public static final String ADDR_WIIRIGHT = "/wii/1/button/Right";
 	 public static final String ADDR_WIIACCEL = "/wii/1/accel/pry";
 	 public static final String ADDR_WIIIR = "/wii/1/ir";
-	 public static final String ADDR_WIIA = "/wii/1/button/A";
-	 
+	 public static final String ADDR_WIIA = "/wii/1/button/A";	 
 	 
 	 private SmoothedValue posX; //the current position of the wii - cursor
 	 private SmoothedValue posY; //the current position of hte wii - cursor
@@ -49,6 +49,9 @@ import oscP5.*;
 		 size(600, 500, GLConstants.GLGRAPHICS);
 		 smooth();  
 		 
+		 
+		 
+		 //TODO: CHECK IF THERE IS INTERNET>>> IF SO THEN COOL MAP... IF NOT THEN UNCOOLZ MAP!!! SHIZ!!
 		 map = new de.fhpotsdam.unfolding.Map(this, "map", 0, 0, 600, 500, true, false, new Microsoft.AerialProvider());
 				  	MapUtils.createDefaultEventDispatcher(this, map);
 		 /*
@@ -69,6 +72,8 @@ import oscP5.*;
 		  posX = new SmoothedValue();
 		  posY = new SmoothedValue();
 		  
+		  minim = new Minim(this);
+		  
 		  markers = new ArrayList<LocationMapMarker>();
 		  initMarkers();
 		  
@@ -79,11 +84,14 @@ import oscP5.*;
 	 void initMarkers()
 	 {
 		 LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix, this, map);
-		 LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "video_icon.png");
+		 LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "nasal_passages.jpg", "jpg", 512, 384);
+		 LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, minim, "song.mp3"); ///TODO: import an mp3 for testing
+		 LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "a_freaking_move.mov"); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
 		 
 		 markers.add(zMarker);
 		 markers.add(pMarker);
-		 
+		 markers.add(aMarker);
+		 markers.add(vMarker);
 	 }
 	 
 	 //all purpose OSC event handler for un-plugged OSC events
@@ -198,13 +206,30 @@ import oscP5.*;
 		 
 	 }
 	 
-	 //if I wanted to add key event handling
+	 //for testing w/o wii
 	 public void keyPressed()
 	 {
-		 if (key == ' ')
+		 if (key == '1')
 		 {
+			zoomIn(1); 
+		 }
+		 else if (key == '2')
+		 {
+			 zoomOut(1);
 		 }
 	 }
+	 
+	 public void stop()
+	 {
+		  minim.stop();
+		  super.stop();		 
+	 }
+	 
+	 
+	//finagling this.. prob. should have had the markers be applets oh well., we see.....
+	void movieEvent(Movie movie) {
+		  movie.read();
+	}
 	 
 
  }

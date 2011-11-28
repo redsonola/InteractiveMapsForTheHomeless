@@ -1,0 +1,26 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import de.fhpotsdam.unfolding.Map;
+import de.fhpotsdam.unfolding.geo.Location;
+
+public class AudioLocationMapMarker extends LocationMapMarker {
+	
+	AudioLocationMapMarker(Location location, PApplet display, Map map)
+	{
+		super(location, display, map, (float) map);	
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		
+		
+	}
+	
+}

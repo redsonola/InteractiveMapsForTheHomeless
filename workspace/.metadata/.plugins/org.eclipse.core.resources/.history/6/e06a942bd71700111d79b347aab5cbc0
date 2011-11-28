@@ -1,0 +1,23 @@
+package com.somethingfurry.maps_and_then_some;
+
+public class StoryLocationMapMarker extends LocationMapMarker {
+	
+	StoryLocationMapMarker()
+	{
+		
+		
+	}
+	
+	public void draw()
+	{
+			
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		
+		
+	}
+	
+}
