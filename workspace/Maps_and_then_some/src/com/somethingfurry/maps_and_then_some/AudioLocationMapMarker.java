@@ -27,7 +27,6 @@ public class AudioLocationMapMarker extends MediaMarker {
 		super(location, display, map, AUDIO_ICON, locationName);
 		_minim = minim; 	
 		_filename = filename; 
-		_player = _minim.loadFile(_filename, 2048);
 		_myFont = _display.createFont("Arial", _fontSize);
 		_display.textFont(_myFont);		
 	}
@@ -35,6 +34,7 @@ public class AudioLocationMapMarker extends MediaMarker {
 	//event class for when closing media
 	public void onStartMedia()
 	{
+		_player = _minim.loadFile(_filename, 2048);		
 		_player.play();
 	}		
 	
@@ -51,13 +51,13 @@ public class AudioLocationMapMarker extends MediaMarker {
 		_display.fill(0, 0, 0, 255);
 		_display.rect(xy[0], xy[1], len, BORDER_SIZE);
 		_display.fill(255, 255, 255, 255);
-		_display.text(_locationName, xy[0]+25, xy[1]+21);
+		_display.text(_locationName, xy[0]+25, xy[1]+18);
 	}
 	
 	private int box_len()
 	{
 		int count = _locationName.length(); 
-		return count * _fontSize;	
+		return (int) count * ( (_fontSize * 5 )/8);	
 	}
 	
 	

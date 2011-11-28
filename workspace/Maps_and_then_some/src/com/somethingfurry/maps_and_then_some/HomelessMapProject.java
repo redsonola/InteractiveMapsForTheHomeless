@@ -84,16 +84,17 @@ import oscP5.*;
 	 void initMarkers()
 	 {
 		 LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix, this, map);
-		 LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "Hangout", "nasal_passages.jpg", "jpg", 512, 384);
-		// LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, "Hangout", minim, "song.mp3"); ///TODO: import an mp3 for testing
-		// LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "Eat", "a_freaking_move.mov"); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
+		// LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "Hangout", "nasal_passages.jpg", "jpg", 512, 384);
+	//	 LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, "Hangout", minim, "02 - Blue Monday.mp3"); ///TODO: import an mp3 for testing
+		 LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "Eat", "courtney_cheezy_shit5 01-21-45.mov"); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
 		 
 		 markers.add(zMarker);
-		 markers.add(pMarker);
+		 //markers.add(pMarker);
+		 
 		 
 		 //TODO FINISH TESTING
 	//	 markers.add(aMarker);
-	//	 markers.add(vMarker);
+		 markers.add(vMarker);
 	 }
 	 
 	 //all purpose OSC event handler for un-plugged OSC events
