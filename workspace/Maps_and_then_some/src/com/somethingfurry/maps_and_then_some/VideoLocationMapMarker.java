@@ -12,14 +12,15 @@ public class VideoLocationMapMarker extends ImageMapMarker {
 	Movie _movie;
 	String _filename;
 	
-	VideoLocationMapMarker(Location location, PApplet display, Map map, String filename)
+	VideoLocationMapMarker(Location location, PApplet display, Map map, String locationName, String filename)
 	{
-		super(location, display, map, VIDEO_ICON);	
+		super(location, display, map, VIDEO_ICON, locationName);	
+		_filename = filename; 
 	}
 	
-	VideoLocationMapMarker(Location location, PApplet display, Map map, String filename, int w, int h)
+	VideoLocationMapMarker(Location location, PApplet display, Map map,  String locationName, String filename, int w, int h)
 	{
-		super(location, display, map, VIDEO_ICON, w, h);	
+		super(location, display, map, VIDEO_ICON, locationName, w, h);	
 	}	
 	
 	//show mediaType

@@ -13,14 +13,16 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 	private String _filetype = "png"; //gif, jpg, etc. as well 
 	private PImage _img;
 		
-	PhotoLocationMapMarker(Location location, PApplet display, Map map)
+	PhotoLocationMapMarker(Location location, PApplet display, Map map, String locationName, String filename, String filetype)
 	{
-		super(location, display, map, PHOTO_ICON);	
+		super(location, display, map, PHOTO_ICON, locationName);	
+		setPhoto(filename, filetype);
+
 	}
 	
-	PhotoLocationMapMarker(Location location, PApplet display, Map map, String filename, String filetype, int w, int h)
+	PhotoLocationMapMarker(Location location, PApplet display, Map map, String locationName, String filename, String filetype, int w, int h)
 	{
-		super(location, display, map, PHOTO_ICON, w, h);
+		super(location, display, map, PHOTO_ICON, locationName, w, h);
 		setPhoto(filename, filetype, w, h);
 	}	
 	
@@ -38,6 +40,13 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 	}	
 
 
+	//event class for when closing media
+	public void onCloseMedia()
+	{
+		_img.delete();
+	}	
+	
+	
 	public void setPhoto(String filename, String filetype)
 	{
 		setPhoto(filename, filetype, 0, 0); 
@@ -54,7 +63,7 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 			_height = _img.height;
 		}
 		int xy[] = drawBorder();
-		_display.image(_img, xy[0]-BORDER_SIZE,  xy[1]-BORDER_SIZE, _width, _height);
+		_display.image(_img, xy[0]+BORDER_SIZE/2,  xy[1]+BORDER_SIZE/2, _width, _height);
 	}
 	
 }

@@ -3,6 +3,7 @@
 package com.somethingfurry.maps_and_then_some;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 import de.fhpotsdam.unfolding.Map;
 import de.fhpotsdam.unfolding.geo.Location;
 import ddf.minim.*;
@@ -13,20 +14,22 @@ public class AudioLocationMapMarker extends MediaMarker {
 	private Minim _minim; 
 	AudioPlayer _player;
 	boolean _playing = false;
+	
+	//for displaying location
+	protected static final int BORDER_SIZE = 25; 
+	private int _fontSize = 16; 
+	private PFont _myFont; 
+	
+	
 
-	
-	AudioLocationMapMarker(Location location, PApplet display, Map map, Minim minim)
+	AudioLocationMapMarker(Location location, PApplet display, Map map, String locationName, Minim minim, String filename)
 	{
-		super(location, display, map, AUDIO_ICON);	
-		_minim = minim; 
-	}	
-	
-	AudioLocationMapMarker(Location location, PApplet display, Map map, Minim minim, String filename)
-	{
-		this(location, display, map, minim);
+		super(location, display, map, AUDIO_ICON, locationName);
+		_minim = minim; 	
 		_filename = filename; 
 		_player = _minim.loadFile(_filename, 2048);
-
+		_myFont = _display.createFont("Arial", _fontSize);
+		_display.textFont(_myFont);		
 	}
 	
 	//event class for when closing media
@@ -40,6 +43,21 @@ public class AudioLocationMapMarker extends MediaMarker {
 	{
 		//draw something here to show audio is playing for shiz and giggles... TODO
 		//would be nice... maybe have a playing image.
+		
+		int[] xy = new int[2];
+		int len =box_len();
+		xy = center(len, BORDER_SIZE);
+		
+		_display.fill(0, 0, 0, 255);
+		_display.rect(xy[0], xy[1], len, BORDER_SIZE);
+		_display.fill(255, 255, 255, 255);
+		_display.text(_locationName, xy[0]+25, xy[1]+21);
+	}
+	
+	private int box_len()
+	{
+		int count = _locationName.length(); 
+		return count * _fontSize;	
 	}
 	
 	

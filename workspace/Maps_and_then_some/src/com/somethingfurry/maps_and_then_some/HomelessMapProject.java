@@ -46,13 +46,13 @@ import oscP5.*;
 	 
 	 //analogous to setup in the processing file.  create shit.  set it up!
 	 public void setup(){
-		 size(600, 500, GLConstants.GLGRAPHICS);
+		 size(800, 600, GLConstants.GLGRAPHICS);
 		 smooth();  
 		 
 		 
 		 
 		 //TODO: CHECK IF THERE IS INTERNET>>> IF SO THEN COOL MAP... IF NOT THEN UNCOOLZ MAP!!! SHIZ!!
-		 map = new de.fhpotsdam.unfolding.Map(this, "map", 0, 0, 600, 500, true, false, new Microsoft.AerialProvider());
+		 map = new de.fhpotsdam.unfolding.Map(this, "map", 0, 0, 800, 600, true, false, new Microsoft.AerialProvider());
 				  	MapUtils.createDefaultEventDispatcher(this, map);
 		 /*
 		 map = new de.fhpotsdam.unfolding.Map(this, "map", 0, 0, 600, 500, true, false, 
@@ -84,14 +84,16 @@ import oscP5.*;
 	 void initMarkers()
 	 {
 		 LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix, this, map);
-		 LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "nasal_passages.jpg", "jpg", 512, 384);
-		 LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, minim, "song.mp3"); ///TODO: import an mp3 for testing
-		 LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "a_freaking_move.mov"); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
+		 LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "Hangout", "nasal_passages.jpg", "jpg", 512, 384);
+		// LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, "Hangout", minim, "song.mp3"); ///TODO: import an mp3 for testing
+		// LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "Eat", "a_freaking_move.mov"); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
 		 
 		 markers.add(zMarker);
 		 markers.add(pMarker);
-		 markers.add(aMarker);
-		 markers.add(vMarker);
+		 
+		 //TODO FINISH TESTING
+	//	 markers.add(aMarker);
+	//	 markers.add(vMarker);
 	 }
 	 
 	 //all purpose OSC event handler for un-plugged OSC events

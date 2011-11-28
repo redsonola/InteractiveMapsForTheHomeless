@@ -21,7 +21,7 @@ public class LocationMapMarker {
 	protected Map _map; //the map where we display shiz
 	protected float _zoomDisplay; //the zoom at which this marker is displayed (or not)
 	
-	protected static final float ZOOM_DISPLAY_THRESH = (float) 5.0; 
+	protected static final float ZOOM_DISPLAY_THRESH = (float) 14.0; 
 	
 	LocationMapMarker(Location location, PApplet display, Map map, float zoomDisplay)
 	{
@@ -34,7 +34,7 @@ public class LocationMapMarker {
 	//show marker or not?
 	private boolean zoomThres()
 	{
-		return ( _zoomDisplay < _map.getZoomLevel());
+		return ( _zoomDisplay > _map.getZoomLevel());
 	}
 	
 	//display the marker

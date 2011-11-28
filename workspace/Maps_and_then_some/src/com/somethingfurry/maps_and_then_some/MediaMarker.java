@@ -16,28 +16,28 @@ public class MediaMarker extends LocationMapMarker {
 	protected boolean _over = false; 
 	protected boolean _pressed = false;
 	protected boolean _presentMedia = false; 
+	protected boolean _suppressIcon = false;
+	protected String _locationName = "";  //TODO: write locations 
 	
 	//icons
 	protected static final String VIDEO_ICON = "video_icon.png";
 	protected static final String AUDIO_ICON = "video_icon.png";
 	protected static final String STORY_ICON = "video_icon.png";
 	protected static final String PHOTO_ICON = "video_icon.png";
-	protected static final String DEMOGRAPHIC_ICON = "video_icon.png";
+	protected static final String DEMOGRAPHIC_ICON = "video_icon.png";	
 
-	
-	
-
-	MediaMarker(Location location, PApplet display, Map map, String iconFile)
+	MediaMarker(Location location, PApplet display, Map map, String iconFile, String locationName)
 	{
 		super(location, display, map, LocationMapMarker.ZOOM_DISPLAY_THRESH);	
 		_iconFile = iconFile; 
+		_locationName = locationName; 
 		_icon = _display.loadImage(_iconFile, "png");
 	}
 	
 	private boolean zoomThres()
 	{
 		//System.out.println("zoomDisplay in MediaMarker is: " + _map.getZoomLevel());
-		return ( _zoomDisplay >= _map.getZoomLevel());
+		return ( _zoomDisplay <= _map.getZoomLevel());
 	}
 	
 	//event class for when closing media
@@ -49,13 +49,18 @@ public class MediaMarker extends LocationMapMarker {
 	//event class for when closing media
 	public void onStartMedia()
 	{
-	
+
 	}	
+	
+	void suppressIcon()
+	{
+		_suppressIcon = true; 	//hack hack hack hack ahem.
+	}
 	
 	public void draw()
 	{
 		update();
-		if ( zoomThres() )
+		if ( zoomThres() & !_suppressIcon)
 		{
 		  _display.fill(215, 0, 0, 100);
 		  
@@ -70,6 +75,7 @@ public class MediaMarker extends LocationMapMarker {
 	{
 		int[] xy = new int[2];
 		xy[0] =  (int) ( (float) ((float) _display.width) / 2.0  ) - ( (int) ((float) ((float)w)/2.0) );
+		xy[1] =  (int) ( (float) ((float) _display.height) / 2.0  ) - ( (int) ((float) ((float)h)/2.0) );		
 		return xy; 
 	}
 	
@@ -82,6 +88,7 @@ public class MediaMarker extends LocationMapMarker {
 		}	
 	
 	 //TODO have a wii-pressed flag in display... COMING!!
+	//TODO: not press in a particular spot to go back... 
 	  void pressed() {
 		    if(_over && _display.mousePressed) {
 		    
