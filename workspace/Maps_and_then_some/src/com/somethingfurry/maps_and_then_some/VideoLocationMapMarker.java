@@ -36,9 +36,7 @@ public class VideoLocationMapMarker extends ImageMapMarker {
 				_height = _movie.height;			
 			}		
 			int xy[] = drawBorder();	
-			_display.tint(255, 20); //hmmmm
-			 _movie.read();
-			_display.image(_movie, xy[0]+BORDER_SIZE/2,  xy[1]+BORDER_SIZE/2, _width, _height);
+			_display.image(_movie, xy[0]+BORDER_SIZE/2, xy[1]+BORDER_SIZE/2, _width, _height);
 		}
 	}
 		
@@ -47,6 +45,8 @@ public class VideoLocationMapMarker extends ImageMapMarker {
 	{	
 		System.out.println("Loading video...");
 		_movie = new Movie(_display, _filename);
+		System.out.println("Done loading video...");		
+		_movie.play();
 	}	
 	
 	//stop audio
@@ -54,16 +54,16 @@ public class VideoLocationMapMarker extends ImageMapMarker {
 	{
 		if (_movie != null)
 		{
+			_movie.stop();
 			_movie.delete();
 		}
 	}
 	
-	//finagling this.. prob. should have had the markers be applets oh well., we see.....
-	void movieEvent(Movie movie) {
+	public void movieEvent(Movie movie) {
 		if(movie != null)
-		  System.out.println("video read");
 		  movie.read();
 	}
+
 	
 	
 }

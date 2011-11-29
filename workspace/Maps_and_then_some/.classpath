@@ -24,5 +24,6 @@
 	<classpathentry kind="lib" path="libs/minim/tritonus_aos.jar"/>
 	<classpathentry kind="lib" path="libs/minim/tritonus_share.jar"/>
 	<classpathentry kind="lib" path="libs/video/video.jar"/>
+	<classpathentry kind="lib" path="libs/video/QTJava.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

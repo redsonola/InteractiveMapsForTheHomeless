@@ -12,5 +12,5 @@
 <intAttribute key="org.eclipse.jdt.launching.APPLET_WIDTH" value="200"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.somethingfurry.maps_and_then_some.HomelessMapProject"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Maps_and_then_some"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-d32"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-d32&#10;-Xmx1024M&#10;-Xms1024M"/>
 </launchConfiguration>

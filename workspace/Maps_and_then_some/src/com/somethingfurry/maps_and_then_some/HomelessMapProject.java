@@ -84,7 +84,7 @@ import oscP5.*;
 		 LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix, this, map);
 		// LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "Hangout", "nasal_passages.jpg", "jpg", 512, 384);
 	//	 LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, "Hangout", minim, "02 - Blue Monday.mp3"); 
-		 LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "Eat", "Dragonfly.mov", 400, 300); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
+		 LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "Eat", "sound_picture_coif_excerpt.mov", 400, 300); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
 		 
 		 markers.add(zMarker);
 		 //markers.add(pMarker);
@@ -226,17 +226,6 @@ import oscP5.*;
 		  super.stop();		 
 	 }
 	 
-	 
-	//finagling this.. prob. should have had the markers be applets oh well., we see.....
-	void movieEvent(Movie movie) {
-		  System.out.println("video read");
-
-		if(movie != null)
-		  System.out.println("video read");
-		  movie.read();
-	}
-	 
-
  }
 
 
