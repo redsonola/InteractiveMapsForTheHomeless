@@ -15,17 +15,17 @@ public class ImageMapMarker extends MediaMarker {
 	protected static final int BORDER_SIZE = 50; 
 	
 
-	ImageMapMarker(Location location, PApplet display, Map map, String icon, String locationName, int w, int h)
+	ImageMapMarker(Location location, PApplet display, Map map, LocationType locationType, int w, int h)
 	{
-		super(location, display, map, icon, locationName);	
+		super(location, display, map, locationType);	
 		resize(w, h);
 		_myFont = _display.createFont("Arial", 16);
 		_display.textFont(_myFont);
 	}
 	
-	ImageMapMarker(Location location, PApplet display, Map map, String icon,  String locationName)
+	ImageMapMarker(Location location, PApplet display, Map map, LocationType locationType)
 	{
-		this(location, display, map, icon, locationName, 0, 0);	
+		this(location, display, map, locationType, 0, 0);	
 		_defaults = true; 
 	}	
 	
@@ -37,7 +37,7 @@ public class ImageMapMarker extends MediaMarker {
 		_display.fill(0, 0, 0, 255);
 		_display.rect(xy[0], xy[1], _width+BORDER_SIZE, _height+BORDER_SIZE);
 		_display.fill(255, 255, 255, 255);
-		_display.text(_locationName, xy[0]+25, xy[1]+21);
+		_display.text(_locationType.text(), xy[0]+25, xy[1]+21);
 		return xy; 
 	}
 	

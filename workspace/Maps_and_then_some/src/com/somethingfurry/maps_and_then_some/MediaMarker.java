@@ -8,30 +8,24 @@ import de.fhpotsdam.unfolding.geo.Location;
 //a marker for something that will actually display media, so it has like, an icon and stuff.
 //also it will display only when zoomed in
 public class MediaMarker extends LocationMapMarker {
-	
-	protected String _iconFile; //must be png for now I don't wanna bother with parsing this shit now
-	protected PImage _icon; 
+	 
 	protected int _width = 20; 
 	protected int _height = 20;
 	protected boolean _over = false; 
 	protected boolean _pressed = false;
+	protected boolean _overWii = false; 
+	protected boolean _pressedWii = false; 	
 	protected boolean _presentMedia = false; 
 	protected boolean _suppressIcon = false;
-	protected String _locationName = "";  //TODO: write locations 
+	protected LocationTypeDisplay _locationType;  //TODO: write locations 
 	
-	//icons
-	protected static final String VIDEO_ICON = "video_icon.png";
-	protected static final String AUDIO_ICON = "video_icon.png";
-	protected static final String STORY_ICON = "video_icon.png";
-	protected static final String PHOTO_ICON = "video_icon.png";
-	protected static final String DEMOGRAPHIC_ICON = "video_icon.png";	
 
-	MediaMarker(Location location, PApplet display, Map map, String iconFile, String locationName)
+
+
+	MediaMarker(Location location, PApplet display, Map map, LocationType locationType)
 	{
 		super(location, display, map, LocationMapMarker.ZOOM_DISPLAY_THRESH);	
-		_iconFile = iconFile; 
-		_locationName = locationName; 
-		_icon = _display.loadImage(_iconFile, "png");
+		_locationType = new LocationTypeDisplay(locationType, _display);
 	}
 	
 	private boolean zoomThres()
@@ -65,7 +59,7 @@ public class MediaMarker extends LocationMapMarker {
 		  _display.fill(215, 0, 0, 100);
 		  
 		  float xy[] = _map.getScreenPositionFromLocation(_location);
-		  _display.image(_icon, xy[0], xy[1], _width, _height);
+		  _display.image(_locationType.icon(), xy[0], xy[1], _width, _height);
 		}
 		if (_presentMedia) presentMedia();
 	}
@@ -85,7 +79,27 @@ public class MediaMarker extends LocationMapMarker {
 		  float xy[] = _map.getScreenPositionFromLocation(_location);
 		  _over = (_display.mouseX >= xy[0] && _display.mouseX <= xy[0]+_width && 
 				  _display.mouseY >= xy[1] && _display.mouseY <= xy[1]+_height) ;
+		}
+	
+	protected void overRectWii() {
+		  float xy[] = _map.getScreenPositionFromLocation(_location);
+		  int[] m_xy = ((HomelessMapProject)_display).curXY();
+		  _overWii = (m_xy[0] > xy[0] && m_xy[0] <= xy[0]+_width && 
+				  m_xy[1] >= xy[1] && m_xy[1] <= xy[1]+_height) ;
 		}	
+	
+	//events for wii
+	public void pressOn()
+	{
+		if (!_presentMedia) onStartMedia();
+		_presentMedia = _overWii || _presentMedia;		
+	}
+
+	public void pressOff()
+	{
+		if (_presentMedia) onCloseMedia();
+		_presentMedia = false;		
+	}	
 	
 	 //TODO have a wii-pressed flag in display... COMING!!
 	//TODO: not press in a particular spot to go back... 
@@ -109,7 +123,8 @@ public class MediaMarker extends LocationMapMarker {
 	  void update() 
 	  {
 		overRect();
-	    pressed(); 
+		overRectWii();
+	    pressed(); 		
 	  }
 	 
 	

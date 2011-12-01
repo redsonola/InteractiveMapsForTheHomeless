@@ -13,16 +13,16 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 	private String _filetype = "png"; //gif, jpg, etc. as well 
 	private PImage _img;
 		
-	PhotoLocationMapMarker(Location location, PApplet display, Map map, String locationName, String filename, String filetype)
+	PhotoLocationMapMarker(Location location, PApplet display, Map map, LocationType locationType, String filename, String filetype)
 	{
-		super(location, display, map, PHOTO_ICON, locationName);	
+		super(location, display, map, locationType);	
 		setPhoto(filename, filetype);
 
 	}
 	
-	PhotoLocationMapMarker(Location location, PApplet display, Map map, String locationName, String filename, String filetype, int w, int h)
+	PhotoLocationMapMarker(Location location, PApplet display, Map map, LocationType locationType, String filename, String filetype, int w, int h)
 	{
-		super(location, display, map, PHOTO_ICON, locationName, w, h);
+		super(location, display, map, locationType, w, h);
 		setPhoto(filename, filetype, w, h);
 	}	
 	

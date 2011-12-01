@@ -2,6 +2,8 @@ package com.somethingfurry.maps_and_then_some;
 
 import java.util.ArrayList;
 
+import com.somethingfurry.maps_and_then_some.LocationMapMarker.LocationType;
+
 import processing.core.*;
 import processing.opengl.*;
 import codeanticode.glgraphics.*;
@@ -37,6 +39,10 @@ import oscP5.*;
 	 public static final String ADDR_WIIACCEL = "/wii/1/accel/pry";
 	 public static final String ADDR_WIIIR = "/wii/1/ir";
 	 public static final String ADDR_WIIA = "/wii/1/button/A";	 
+	 public static final String ADDR_WII1 = "/wii/1/button/1";
+	 public static final String ADDR_WIINUNCHUCK = "/wii/1/nunchuk/joy";
+
+	 public static final String ADDR_WII2 = "/wii/1/button/2";
 	 
 	 private SmoothedValue posX; //the current position of the wii - cursor
 	 private SmoothedValue posY; //the current position of hte wii - cursor
@@ -48,6 +54,7 @@ import oscP5.*;
 	 public void setup(){
 		 size(800, 600, GLConstants.GLGRAPHICS);
 		 smooth();  
+		 
 		 
 		 //TODO: CHECK IF THERE IS INTERNET>>> IF SO THEN COOL MAP... IF NOT THEN UNCOOLZ MAP!!! SHIZ!!
 		 map = new de.fhpotsdam.unfolding.Map(this, "map", 0, 0, 800, 600, true, false, new Microsoft.AerialProvider());
@@ -65,6 +72,9 @@ import oscP5.*;
 		  oscP5.plug(this,"zoomIn", ADDR_WIIPLUS);
 		  oscP5.plug(this, "zoomOut", ADDR_WIIMINUS);
 		  oscP5.plug(this, "panning", ADDR_WIIA);
+		  oscP5.plug(this, "presentMedia", ADDR_WII1);
+		  oscP5.plug(this, "closeMedia", ADDR_WII2);
+		  
 		  
 		  //create the current x, y pos of screen
 		  posX = new SmoothedValue();
@@ -75,24 +85,23 @@ import oscP5.*;
 		  markers = new ArrayList<LocationMapMarker>();
 		  initMarkers();
 		  
-		  System.out.println("zoom level is: " + map.getZoomLevel());
 	 }
 	 
 	 //void init the markers, that is add in all the data
 	 void initMarkers()
 	 {
+		 
+		 //TODO: add real data and locations
+		 
 		 LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix, this, map);
 		// LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this, map, "Hangout", "nasal_passages.jpg", "jpg", 512, 384);
-	//	 LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, "Hangout", minim, "02 - Blue Monday.mp3"); 
-		 LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, "Eat", "sound_picture_coif_excerpt.mov", 400, 300); //TODO: IMPORT A FREAKING VIDEO FILE TO TEST THIS SHIT
+		 LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, LocationType.EAT, minim, "02 - Blue Monday.mp3"); 
+		// LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, LocationType.BATHROOMS, "sound_picture_coif_excerpt.mov", 400, 300);
 		 
 		 markers.add(zMarker);
 		 //markers.add(pMarker);
-		 
-		 
-		 //TODO FINISH TESTING
-	//	 markers.add(aMarker);
-		 markers.add(vMarker);
+		// markers.add(aMarker);
+		 markers.add(aMarker);
 	 }
 	 
 	 //all purpose OSC event handler for un-plugged OSC events
@@ -101,6 +110,7 @@ import oscP5.*;
 	 void oscEvent(OscMessage message) {
 		float x;
 		float y;
+	//	System.out.println(message);
 		
 		//the IR codesz
 		/*  if( message.checkAddrPattern(ADDR_WIIIR) )
@@ -124,10 +134,22 @@ import oscP5.*;
 			posY.update(height - map(y, 0, 1, 0, height)) ;
 			curLocation = map.getLocationFromScreenPosition(posX.value(), posY.value());
 					
-			System.out.println("posX: "+  posX.value() + "posY:"  + posY.value());
+		//	System.out.println("posX: "+  posX.value() + "posY:"  + posY.value());
 
-		}		
+		}	
+		
+		/*if (message.checkAddrPattern(ADDR_WIINUNCHUCK))
+		{	
+		    x = (float) message.get(0).floatValue();
+			y = (float) message.get(1).floatValue();  
 			
+			System.out.println("(" + x + "," + y + "y"+ ")");
+			
+			posX.update( map(x, 0, 1, 0, width) ) ;
+			posY.update(height - map(y, 0, 1, 0, height)) ;
+			curLocation = map.getLocationFromScreenPosition(posX.value(), posY.value());
+		}*/
+
 	 }
  
 	 //increase zoom -- this is the wii.PLUS event handler
@@ -148,7 +170,39 @@ import oscP5.*;
 			  if (zoom > 0) zoom--;
 			  map.zoomAndPanTo(curLocation, zoom);	
 		  }
-	  }	 
+	  }	
+	  
+	  public int[] curXY()
+	  {
+		  int[] xy = new int[2];
+		  xy[0] = posX.value();
+		  xy[1] = posY.value();
+		  return xy;
+	  }
+	  
+	  void presentMedia(int down)
+	  {
+		  if (1==down)
+		  {
+			  for (int i=0; i<markers.size(); i++)
+			  {
+				  markers.get(i).pressOn();
+			  }
+		  }
+		  
+	  }
+	  
+	  void closeMedia(int down)
+	  {
+		  if (1==down)
+		  {
+			  for (int i=0; i<markers.size(); i++)
+			  {
+				  markers.get(i).pressOff();
+			  }
+		  }
+		  
+	  }	  
   
 	  //pan while the user halds the wii.A button down, and stop and finalize pan when it comes up
 	  public void panning(int isDown)

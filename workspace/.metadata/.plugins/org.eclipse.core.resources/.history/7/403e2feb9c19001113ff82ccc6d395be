@@ -1,0 +1,37 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import ddf.minim.Minim;
+import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.Map;
+
+//thisissohacked.
+
+public class StoryLocationMapMarker extends MediaMarker {
+	
+	MediaMarker _marker; 
+	MediaType _mediaType;
+	
+	
+	StoryLocationMapMarker(Location location, PApplet display, Map map, Minim minim, String filename)
+	{
+		super(location, display, map, STORY_ICON);	
+		_mediaType = MediaType.AUDIO; 
+		_marker = new VideoLocationMapMarker(location, display, map, filename, w, h);
+
+	}
+	StoryLocationMapMarker(Location location, PApplet display, Map map, String filename, int w, int h)
+	{
+		super(location, display, map, STORY_ICON);	
+		_mediaType = MediaType.VIDEO; 		
+		
+	}
+	
+	//show mediaType
+	public void presentMedia()
+	{
+		
+		
+	}
+	
+}

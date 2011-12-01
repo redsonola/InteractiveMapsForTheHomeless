@@ -15,6 +15,7 @@ import processing.core.*;
 public class LocationMapMarker {
 	
 	public enum MediaType { PHOTO, VIDEO, AUDIO, STORY, ZOOMED_OUT, DEMOGRAPHIC };
+	public enum LocationType { BATHROOMS, EAT, ELECTRICITY, SLEEP, HANGOUT, STORY, DEMOGRAPHICS };  
 	protected MediaType _mediaType;  //what kind of media type
 	protected Location _location; //where is located on the map
 	protected PApplet _display; //the applet where we draw shiz
@@ -55,6 +56,11 @@ public class LocationMapMarker {
 				
 	}
 	
+	public void pressOn()
+	{}
+
+	public void pressOff()
+	{}
 }
 
 

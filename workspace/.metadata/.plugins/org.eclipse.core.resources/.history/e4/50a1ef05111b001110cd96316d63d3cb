@@ -1,0 +1,27 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PImage;
+
+public class LocationTypeDisplay {
+
+	
+//	public enum LocationType { BATHROOMS, EAT, ELECTRICITY, SLEEP, HANGOUT, STORY, DEMOGRAPHICS };  
+	
+	protected static final String LOCATIONS_ICONS[] = { "bathroom.png", "restaurant_food.png", "electricity.png", "sleep.png","hangout.png", "video_icon.png"};		
+	protected static final String LOCATIONS_TEXT[] = { "Bathroom", "Eat","Electricity","Sleep", "Hangout", "Story", "Demographics"};		
+	
+	protected LocationMapMarker.LocationType _locationType;
+	protected String _text;
+	protected String _iconFile;
+	PImage _img;
+
+	public LocationTypeDisplay(LocationMapMarker.LocationType locationType)
+	{
+		_locationType = locationType;
+		_text = LOCATIONS_TEXT[_locationType.ordinal()];
+		_iconFile =LOCATIONS_ICONS[_locationType.ordinal()]; 
+		
+	}
+	
+	
+}

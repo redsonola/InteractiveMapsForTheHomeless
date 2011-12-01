@@ -22,9 +22,9 @@ public class AudioLocationMapMarker extends MediaMarker {
 	
 	
 
-	AudioLocationMapMarker(Location location, PApplet display, Map map, String locationName, Minim minim, String filename)
+	AudioLocationMapMarker(Location location, PApplet display, Map map, LocationType locationType, Minim minim, String filename)
 	{
-		super(location, display, map, AUDIO_ICON, locationName);
+		super(location, display, map, locationType);
 		_minim = minim; 	
 		_filename = filename; 
 		_myFont = _display.createFont("Arial", _fontSize);
@@ -51,13 +51,13 @@ public class AudioLocationMapMarker extends MediaMarker {
 		_display.fill(0, 0, 0, 255);
 		_display.rect(xy[0], xy[1], len, BORDER_SIZE);
 		_display.fill(255, 255, 255, 255);
-		_display.text(_locationName, xy[0]+25, xy[1]+18);
+		_display.text(_locationType.text(), xy[0]+25, xy[1]+18);
 	}
 	
 	private int box_len()
 	{
-		int count = _locationName.length(); 
-		return (int) count * ( (_fontSize * 5 )/8);	
+		int count = _locationType.text().length(); 
+		return (int) count * ( (_fontSize * 5 ));	
 	}
 	
 	
