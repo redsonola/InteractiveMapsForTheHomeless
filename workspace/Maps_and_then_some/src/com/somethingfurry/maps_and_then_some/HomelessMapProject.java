@@ -2,6 +2,7 @@ package com.somethingfurry.maps_and_then_some;
 
 import java.util.ArrayList;
 
+import com.somethingfurry.maps_and_then_some.DemoInfo.DemographicType;
 import com.somethingfurry.maps_and_then_some.LocationMapMarker.LocationType;
 
 import processing.core.*;
@@ -98,10 +99,17 @@ import oscP5.*;
 		 LocationMapMarker aMarker = new AudioLocationMapMarker(phoenix, this, map, LocationType.EAT, minim, "02 - Blue Monday.mp3"); 
 		// LocationMapMarker vMarker = new VideoLocationMapMarker(phoenix, this, map, LocationType.BATHROOMS, "sound_picture_coif_excerpt.mov", 400, 300);
 		 
+		 DemoInfo info = new DemoInfo();
+		 info.add(DemographicType.AGE, "17");
+		 info.add(DemographicType.PERCENT_FEMALE, "100%");
+		 info.add(DemographicType.PERCENT_MALE, "0%");
+		 info.add(DemographicType.BATHROOMS, "35%");
+		 DemographcMapMarker dMarker = new DemographcMapMarker(phoenix, this, map, info);
+		 
 		 markers.add(zMarker);
 		 //markers.add(pMarker);
 		// markers.add(aMarker);
-		 markers.add(aMarker);
+		 markers.add(dMarker);
 	 }
 	 
 	 //all purpose OSC event handler for un-plugged OSC events

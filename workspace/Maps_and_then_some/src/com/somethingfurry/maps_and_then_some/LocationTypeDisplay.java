@@ -8,7 +8,7 @@ public class LocationTypeDisplay {
 	
 //	public enum LocationType { BATHROOMS, EAT, ELECTRICITY, SLEEP, HANGOUT, STORY, DEMOGRAPHICS };  
 	
-	protected static final String LOCATIONS_ICONS[] = { "bathroom.png", "restaurant_food.png", "electricity.png", "sleep.png","hangout.png", "video_icon.png"};		
+	protected static final String LOCATIONS_ICONS[] = { "bathroom.png", "restaurant_food.png", "electricity.png", "sleep.png","hangout.png", "video_icon.png", "video_icon.png"};		
 	protected static final String LOCATIONS_TEXT[] = { "Bathroom", "Eat","Electricity","Sleep", "Hangout", "Story", "Demographics"};		
 	
 	protected LocationMapMarker.LocationType _locationType;
