@@ -29,7 +29,6 @@ public class MediaMarker extends LocationMapMarker {
 	
 	protected boolean zoomThres()
 	{
-		System.out.println("zoomDisplay in MediaMarker is: " + _map.getZoomLevel() + "& we are displaying? "+(_zoomDisplay <= _map.getZoomLevel()));
 		return ( _zoomDisplay <= _map.getZoomLevel());
 	}
 	

@@ -10,7 +10,7 @@ public class DemoInfo {
 	SUICIDE_ATTEMPT, SIBLINGS };
 	
 	public String[] _displayStrings = {"Bathroom Use: ", "Eating Use: ", "Electricity Use: ", "Sleep Use: ",
-			"Hangout Use: ", "Age Use: ", "Time on Street: ", "Male: ", "Female: ",	"Pregnant: ", "Relationship Status: ",	
+			"Hangout Use: ", "Age Use: ", "Time on Street: ", "Male: ", "Female: ",	"Pregnant: ", "Relationship Status: ", "Places of Origin:",	
 			"Suicide Attempts (by users): ", "Number of Siblings: "};
 	
 	HashMap<DemographicType, String> _demoz; 	

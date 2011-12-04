@@ -26,7 +26,6 @@ public class ZoomedOutMapLocationMarker extends LocationMapMarker{
 		//show marker or not?
 		protected boolean zoomThres()
 		{
-			System.out.println("zoomDisplay in ZoomedMarker is: " + _map.getZoomLevel() + "& we are displaying? "+(_zoomDisplay >= _map.getZoomLevel()));			
 			return ( _zoomDisplay > _map.getZoomLevel() &&  _zoomDisplayHigher <= _map.getZoomLevel() );
 		}
 

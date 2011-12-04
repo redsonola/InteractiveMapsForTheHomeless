@@ -16,14 +16,28 @@ public class VideoLocationMapMarker extends ImageMapMarker {
 	{
 		super(location, display, map, locationType, LocationTypeDisplay.MediaType.VIDEO);	
 		_filename = filename; 
+		testExistence();
 	}
 	
 	VideoLocationMapMarker(Location location, PApplet display, Map map,  LocationType locationType, String filename, int w, int h)
 	{
 		super(location, display, map, locationType, LocationTypeDisplay.MediaType.VIDEO, w, h);
 		_filename = filename; 	
+		testExistence();
 	}	
 	
+	public void testExistence()
+	{
+		_movie = new Movie(_display, _filename);; // good place to load??? we'll see...	
+
+		if (_movie == null)
+		{
+			System.out.println("FUCKING BITCH DOES NOT EXIST FIND IT FIND IT!!!!!");
+		}
+		
+		_movie.delete(); 
+	}
+
 	//show mediaType
 	public void presentMedia()
 	{

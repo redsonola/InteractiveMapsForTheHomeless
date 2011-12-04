@@ -134,7 +134,7 @@ public class HomelessMapProject extends PApplet {
 
 		// E 7th St.
 
-		Location e7thSt = new Location(33.4259f, -111.8937f);
+		 Location e7thSt = new Location(33.4259f, -111.8937f);
 
 		LocationMapMarker zE7thSt = new ZoomedOutMapLocationMarker(e7thSt,
 				this, map);
@@ -143,23 +143,19 @@ public class HomelessMapProject extends PApplet {
 
 		LocationMapMarker pE7thSt_bathroom = new PhotoLocationMapMarker(e7thSt,
 				this, map, LocationType.BATHROOMS,
-				"Bathrooms/17_E.7th_St_MG_1394 copy.JPG", "jpg",
+				"17_E.7th_St_MG_1394 copy.JPG", "jpg",
 				400, 300);
 
-		markers.add(pE7thSt_bathroom);
-		PImage img = loadImage("/Bathrooms/17_E.7th_St_MG_1394 copy.JPG", "jpg"); // good place to load??? we'll see...	
-
+		markers.add(pE7thSt_bathroom); 
 		
-		/*
-
 		Location e7thSt_eat_01 = new Location(33.4380f, -111.8948f);
 
 		LocationMapMarker pE7thSt_eat_01 = new PhotoLocationMapMarker(
 				e7thSt_eat_01, this, map, LocationType.EAT,
-
-				"photo\\17_E.7th_St._IMG_1395.jpg", "jpg");
+				"17_E.7th_St._IMG_1395.jpg", "jpg");
 
 		markers.add(pE7thSt_eat_01);
+		
 
 		Location e7thSt_eat_02 = new Location(33.4363f, -111.8920f);
 
@@ -167,7 +163,7 @@ public class HomelessMapProject extends PApplet {
 
 		e7thSt_eat_02, this, map, LocationType.EAT,
 
-		"photo\\17_E.7th_St._IMG_1396.jpg", "jpg");
+		"17_E.7th_St._IMG_1396.jpg", "jpg");
 
 		markers.add(pE7thSt_eat_02);
 
@@ -177,7 +173,7 @@ public class HomelessMapProject extends PApplet {
 
 		e7thSt_eat_03, this, map, LocationType.EAT,
 
-		"photo\\17_E.7th_St._IMG_1397.jpg", "jpg");
+		"17_E.7th_St._IMG_1397.JPG", "jpg");
 
 		markers.add(pE7thSt_eat_03);
 
@@ -187,7 +183,7 @@ public class HomelessMapProject extends PApplet {
 
 		e7thSt_elec_01, this, map, LocationType.ELECTRICITY,
 
-		"electricity\\11_E._7th_St_IMG_1393.JPG", "jpg");
+		"11_E._7th_St_IMG_1393.JPG", "jpg");
 
 		markers.add(eE7thSt_elec_01);
 
@@ -197,7 +193,7 @@ public class HomelessMapProject extends PApplet {
 
 		e7thSt_elec_02, this, map, LocationType.ELECTRICITY,
 
-		"electricity\\17_E.7th_St_MG_1394.JPG", "jpg");
+		"17_E.7th_St_MG_1394.JPG", "jpg");
 
 		markers.add(eE7thSt_elec_02);
 
@@ -207,7 +203,7 @@ public class HomelessMapProject extends PApplet {
 
 		e7thSt_movie, this, map, LocationType.STORY,
 
-		"/Maps_and_then_some/data/Stories/Movies/17_E.7th_St.mov");
+		"17_E.7th_St.mov");
 
 		markers.add(vE7thSt_movie);
 
@@ -235,7 +231,7 @@ public class HomelessMapProject extends PApplet {
 
 		ashAndUniv_01, this, map, LocationType.HANGOUT,
 
-		"hangout\\photo\\119_Ash_and_University_IMG_1411.JPG", "JPG");
+		"119_Ash_and_University_IMG_1411.JPG", "JPG");
 
 		markers.add(pAshAndUniv_hangout_01);
 
@@ -265,7 +261,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_eat, this, map, LocationType.EAT, minim,
 
-		"Eat\\Audio\\414_Mill_Ave.aiff");
+		"414_Mill_Ave.aif");
 
 		markers.add(aMillAve_eat);
 
@@ -275,7 +271,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_eat_movie, this, map, LocationType.EAT,
 
-		"Eat\\movie\\740_S_Mill_Ave._#140.mov");
+		"740_S_Mill_Ave._#140.mov");
 
 		markers.add(vMillAve_eat);
 
@@ -285,7 +281,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_eat_photo, this, map, LocationType.EAT,
 
-		"Eat\\photo\\721_Mill_Ave_IMG_1398.JPG", "jpg");
+		"721_Mill_Ave_IMG_1398.JPG", "jpg");
 
 		markers.add(pMillAve_eat);
 
@@ -295,7 +291,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_eat_photo_01, this, map, LocationType.EAT,
 
-		"Eat\\photo\\721_Mill_Ave_Jack_Dan_IMG_1389.JPG", "jpg");
+		"721_Mill_Ave_Jack_Dan_IMG_1389.JPG", "jpg");
 
 		markers.add(pMillAve_eat_01);
 
@@ -305,7 +301,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_hangout_audio, this, map, LocationType.HANGOUT, minim,
 
-		"hangout\\audio\\740_Mill_Ave.aiff");
+		"740_Mill_Ave.aif");
 		
 		
 
@@ -323,9 +319,9 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.HANGOUT,
 
-				"Hangout/Photos/501_S._Mill_Ave_IMG_1409.jpg",
+				"501_S._Mill_Ave_IMG_1409.jpg",
 
-				"JPG");
+				"jpg");
 
 		markers.add(pMillAve_hangout_01);
 
@@ -341,9 +337,9 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.HANGOUT,
 
-		"Hangout/Photos/509_Mill_Ave_IMG_1410.JPG",
+		"509_Mill_Ave_IMG_1410.JPG",
 
-		"JPG");
+		"jpg");
 
 		markers.add(pMillAve_hangout_02);
 
@@ -359,9 +355,9 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.HANGOUT,
 
-		"Hangout/Photos/699_Mill_Ave_IMG_1401.jpg",
+		"699_Mill_Ave_IMG_1401.jpg",
 
-		"JPG");
+		"jpg");
 
 		markers.add(pMillAve_hangout_03);
 
@@ -377,7 +373,7 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.HANGOUT,
 
-		"Hangout/Photos/721_Mill_Ave_2_Dan.jpg",
+		"721_Mill_Ave_2_Dan.jpg",
 
 		"JPG");
 
@@ -395,7 +391,7 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.HANGOUT,
 
-		"Hangout/Photos/721_Mill_Ave_Bus_Stop.jpg",
+		"721_Mill_Ave_Bus_Stop.jpg",
 
 		"JPG");
 
@@ -407,7 +403,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_hangout_photo_06, this, map, LocationType.HANGOUT,
 
-		"Hangout/Photos/721_Mill_Ave.jpg",
+		"721_Mill_Ave.jpg",
 
 		"JPG");
 
@@ -425,7 +421,7 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.HANGOUT,
 
-				"Hangout/Photos/Mill_and_6thSt._IMG_1403.JPG",
+				"Mill_and_6thSt._IMG_1403.JPG",
 
 				"JPG");
 
@@ -443,7 +439,7 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.HANGOUT,
 
-				"Hangout/Photos/Mill_Ave_And_7th_IMG_1392.jpg",
+				"Mill_Ave_And_7th_IMG_1392.jpg",
 
 				"JPG");
 
@@ -455,7 +451,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_sleep_video, this, map, LocationType.SLEEP,
 
-		"Sleep/Movies/Mill_Rte202.mov");
+		"Mill_Rte202.mov");
 
 		markers.add(vMillAve_sleep);
 
@@ -471,7 +467,7 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.SLEEP,
 
-		"Sleep/Photos/425_Mill_Ave_IMG_1408.jpg",
+		"425_Mill_Ave_IMG_1408.jpg",
 
 		"JPG");
 
@@ -483,7 +479,7 @@ public class HomelessMapProject extends PApplet {
 
 		millAve_stories_movie, this, map, LocationType.STORY,
 
-		"/Maps_and_then_some/data/Stories/Movies/Mill_Ave_and_University.mov");
+		"Mill_Ave_and_University.mov");
 
 		// East Roosevelt
 
@@ -516,7 +512,7 @@ public class HomelessMapProject extends PApplet {
 
 		northBlackCanyonHighway, this, map, LocationType.HANGOUT,
 
-		"hangout\\movies\\5050_North_Black_Canyon_Highway.mov");
+		"5050_North_Black_Canyon_Highway.mov");
 
 		markers.add(vNBCH_hangout);
 
@@ -526,7 +522,7 @@ public class HomelessMapProject extends PApplet {
 
 		vNBCH_stories, this, map, LocationType.STORY,
 
-		"/Maps_and_then_some/data/Stories/Movies/5050_North_Black_Canyon_Highway.mov");
+		"5050_North_Black_Canyon_Highway.mov");
 
 		markers.add(vNBCH_stories_movie);
 
@@ -544,7 +540,7 @@ public class HomelessMapProject extends PApplet {
 
 		tempeTownLake, this, map, LocationType.HANGOUT,
 
-		"hangout\\movies\\Tempe_Town_Lake.mov");
+		"Tempe_Town_Lake.mov");
 
 		markers.add(vTempeTownLake_hangout);
 
@@ -562,7 +558,7 @@ public class HomelessMapProject extends PApplet {
 
 		map, LocationType.HANGOUT,
 
-		"hangout\\photos\\24_W_5th_St_IMG_1405.JPG", "JPG");
+		"24_W_5th_St_IMG_1405.JPG", "JPG");
 
 		markers.add(pW5thSt);
 
@@ -572,7 +568,7 @@ public class HomelessMapProject extends PApplet {
 
 		w5thSt_sleep, this, map, LocationType.SLEEP,
 
-		"Sleep/Movies/24_W_5th_St.MOV");
+		"24_W_5th_St.MOV");
 
 		markers.add(vW5thSt_sleep);
 
@@ -590,7 +586,7 @@ public class HomelessMapProject extends PApplet {
 
 		eWashington, this, map, LocationType.HANGOUT,
 
-		"hangout\\photos\\3150_E_Washington_St.jpg", "JPG");
+		"3150_E_Washington_St.jpg", "JPG");
 
 		markers.add(pEWashington);
 
@@ -612,7 +608,7 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.HANGOUT,
 
-				"Hangout/Photos/3333 East Van Buren Street Phoenix, Arizona_TumbleWeeds.jpg",
+				"3333 East Van Buren Street Phoenix, Arizona_TumbleWeeds.jpg",
 
 				"JPG");
 
@@ -638,7 +634,7 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.HANGOUT,
 
-		"Hangout/Photos/Edison_Park‎_Phoenix.jpg",
+		"Edison_Park‎_Phoenix.jpg",
 
 		"JPG");
 
@@ -650,7 +646,7 @@ public class HomelessMapProject extends PApplet {
 
 		this, map, LocationType.STORY, minim,
 
-		"Stories/Audio/Edison_Park‎_Phoenix.aiff");
+		"Edison_Park‎_Phoenix.aif");
 
 		markers.add(aEdisonPark);
 
@@ -674,7 +670,7 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.HANGOUT,
 
-				"Hangout/Photos/Willow_Park‎_2815_W. Taylor_Street.jpg",
+				"Willow_Park‎_2815_W. Taylor_Street.jpg",
 
 				"JPG");
 
@@ -700,7 +696,7 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.SLEEP,
 
-		"Sleep/Photos/2750_West_Camelback_Road.jpg",
+		"2750_West_Camelback_Road.jpg",
 
 		"JPG");
 
@@ -726,7 +722,7 @@ public class HomelessMapProject extends PApplet {
 
 		LocationType.SLEEP,
 
-		"Sleep/Photos/402_North_16th_Street.jpg",
+		"402_North_16th_Street.jpg",
 
 		"JPG");
 
@@ -752,7 +748,7 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.SLEEP,
 
-				"Sleep/Photos/Biehn_Colony_Park‎_Guadalupe.jpg",
+				"Biehn_Colony_Park‎_Guadalupe.jpg",
 
 				"JPG");
 
@@ -778,7 +774,7 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.SLEEP,
 
-				"Sleep/Photos/Cielito Park‎_3402_West_Campbell_Avenue.jpg",
+				"Cielito Park‎_3402_West_Campbell_Avenue.jpg",
 
 				"JPG");
 
@@ -804,7 +800,7 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.SLEEP,
 
-				"Sleep/Photos/Margaret_T_Hance_Park_67_West_Culver_Street.jpg",
+				"Margaret_T_Hance_Park_67_West_Culver_Street.jpg",
 
 				"JPG");
 
@@ -822,11 +818,10 @@ public class HomelessMapProject extends PApplet {
 
 				LocationType.STORY,
 
-				"Stories/Movies/Margaret_T_Hance_Park_67_West_Culver_Street.mov");
+				"Margaret_T_Hance_Park_67_West_Culver_Street.mov");
 
 		markers.add(vHancePark_movie);
 		
-		*/
 	}
 
 	void spreadMarkers() {

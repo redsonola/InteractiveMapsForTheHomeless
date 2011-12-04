@@ -17,6 +17,7 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 	{
 		super(location, display, map, locationType, LocationTypeDisplay.MediaType.PHOTO);	
 		setPhoto(filename, filetype);
+		testExistence();
 
 	}
 	
@@ -24,6 +25,7 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 	{
 		super(location, display, map, locationType,LocationTypeDisplay.MediaType.PHOTO, w, h);
 		setPhoto(filename, filetype, w, h);
+		testExistence();
 	}	
 	
 	public void setPhoto(String filename, String filetype, int w, int h)
@@ -32,6 +34,19 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 		_filetype = filetype; 
 		resize(w, h);
 	}
+	
+	public void testExistence()
+	{
+		_img = _display.loadImage(_photoFileName, _filetype); // good place to load??? we'll see...	
+
+		if (_img == null)
+		{
+			System.out.println("FUCKING BITCH DOES NOT EXIST FIND IT FIND IT!!!!!");
+		}
+		
+		_img.delete(); 
+	}
+	
 	
 	//event class for when closing media
 	public void onStartMedia()

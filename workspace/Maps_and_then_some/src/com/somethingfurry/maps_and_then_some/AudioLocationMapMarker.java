@@ -4,11 +4,13 @@ package com.somethingfurry.maps_and_then_some;
 
 import processing.core.PApplet;
 import processing.core.PFont;
+import processing.core.PImage;
+import processing.video.Movie;
 import de.fhpotsdam.unfolding.Map;
 import de.fhpotsdam.unfolding.geo.Location;
 import ddf.minim.*;
 
-public class AudioLocationMapMarker extends MediaMarker {
+public class AudioLocationMapMarker extends ImageMapMarker {
 	
 	private String _filename; 
 	private Minim _minim; 
@@ -19,6 +21,7 @@ public class AudioLocationMapMarker extends MediaMarker {
 	protected static final int BORDER_SIZE = 25; 
 	private int _fontSize = 16; 
 	private PFont _myFont; 
+	private PImage _img; 
 	
 	
 
@@ -29,29 +32,23 @@ public class AudioLocationMapMarker extends MediaMarker {
 		_filename = filename; 
 		_myFont = _display.createFont("Arial", _fontSize);
 		_display.textFont(_myFont);		
+		//testExistence();
+		_img = _display.loadImage("audio_pic.jpg", "jpg");
 	}
 	
 	//event class for when closing media
 	public void onStartMedia()
 	{
 		_player = _minim.loadFile(_filename, 2048);		
-		_player.play();
+		_player.play();	
 	}		
 	
 	//show mediaType
+	//show mediaType -- display picture! 
 	public void presentMedia()
 	{
-		//draw something here to show audio is playing for shiz and giggles... TODO
-		//would be nice... maybe have a playing image.
-		
-		int[] xy = new int[2];
-		int len =box_len();
-		xy = center(len, BORDER_SIZE);
-		
-		_display.fill(0, 0, 0, 255);
-		_display.rect(xy[0], xy[1], len, BORDER_SIZE);
-		_display.fill(255, 255, 255, 255);
-		_display.text(_locationType.text(), xy[0]+25, xy[1]+18);
+		int xy[] = drawBorder();
+		_display.image(_img, xy[0]+BORDER_SIZE/2,  xy[1]+BORDER_SIZE/2, _img.width, _img.height);
 	}
 	
 	private int box_len()
@@ -67,4 +64,9 @@ public class AudioLocationMapMarker extends MediaMarker {
 		_player.close();
 	}
 
+	public void testExistence()
+	{
+		_player = _minim.loadFile(_filename, 2048);				
+	}	
+	
 }
