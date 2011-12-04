@@ -12,7 +12,7 @@ import processing.core.*;
 
 
 //master class for markers with media, etc.
-public class LocationMapMarker {
+public abstract class LocationMapMarker {
 	
 	public enum MediaType { PHOTO, VIDEO, AUDIO, STORY, ZOOMED_OUT, DEMOGRAPHIC };
 	public enum LocationType { BATHROOMS, EAT, ELECTRICITY, SLEEP, HANGOUT, STORY, DEMOGRAPHICS };  
@@ -22,7 +22,9 @@ public class LocationMapMarker {
 	protected Map _map; //the map where we display shiz
 	protected float _zoomDisplay; //the zoom at which this marker is displayed (or not)
 	
-	protected static final float ZOOM_DISPLAY_THRESH = (float) 14.0; 
+	protected static final float ZOOM_DISPLAY_THRESH = (float) 10.0; 
+	protected static final float ZOOM_DISPLAY_THRESH_RLY = (float) 14.0; 	
+	
 	
 	LocationMapMarker(Location location, PApplet display, Map map, float zoomDisplay)
 	{
@@ -33,10 +35,7 @@ public class LocationMapMarker {
 	}
 	
 	//show marker or not?
-	private boolean zoomThres()
-	{
-		return ( _zoomDisplay > _map.getZoomLevel());
-	}
+	protected  abstract boolean zoomThres();
 	
 	//display the marker
 	public void draw()

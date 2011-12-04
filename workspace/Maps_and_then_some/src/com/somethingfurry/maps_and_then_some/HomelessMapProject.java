@@ -28,6 +28,7 @@ import oscP5.*;
 	 Location phoenix = new Location(33.43f, -112.02f); //the location of phoenix
 	 Location curLocation = phoenix; //the current location of the map... this is latitude and longitude
 	 Minim minim; //for audio classes
+	 NunChuckHandler nunChuckHandler; 
 	 
 	 OscP5 oscP5; //object to enable OSC shiz
 	 public static final int OSC_PORT = 9000; //max port coz I'm lazy //the port to listen for OSC messages on
@@ -45,9 +46,12 @@ import oscP5.*;
 
 	 public static final String ADDR_WII2 = "/wii/1/button/2";
 	 
-	 private SmoothedValue posX; //the current position of the wii - cursor
-	 private SmoothedValue posY; //the current position of hte wii - cursor
+	 //hack hack hack hack
+	 public SmoothedValue posX; //the current position of the wii - cursor
+	 public SmoothedValue posY; //the current position of hte wii - cursor
+	 
 	 private boolean isPanning = false;  //whether we are in panning mode... if so pan to where cursor is
+	 
 	 
 	 private ArrayList<LocationMapMarker> markers; 
 	 
@@ -75,13 +79,18 @@ import oscP5.*;
 		  oscP5.plug(this, "panning", ADDR_WIIA);
 		  oscP5.plug(this, "presentMedia", ADDR_WII1);
 		  oscP5.plug(this, "closeMedia", ADDR_WII2);
+		  oscP5.plug(this, "nunChuckCursor", ADDR_WIINUNCHUCK);
 		  
 		  
 		  //create the current x, y pos of screen
 		  posX = new SmoothedValue();
 		  posY = new SmoothedValue();
+		  posY.update(height/2);
+		  posX.update(width/2);
 		  
 		  minim = new Minim(this);
+		  
+		  nunChuckHandler = new NunChuckHandler(this);
 		  
 		  markers = new ArrayList<LocationMapMarker>();
 		  initMarkers();
@@ -133,7 +142,7 @@ import oscP5.*;
 		else */
 		
 		//use the acceleration to change position.
-		if( message.checkAddrPattern(ADDR_WIIACCEL) )
+		/*if( message.checkAddrPattern(ADDR_WIIACCEL) )
 		{
 		    y = (float) message.get(0).floatValue();
 			x = (float) message.get(1).floatValue();  
@@ -145,18 +154,18 @@ import oscP5.*;
 		//	System.out.println("posX: "+  posX.value() + "posY:"  + posY.value());
 
 		}	
-		
-		/*if (message.checkAddrPattern(ADDR_WIINUNCHUCK))
+		/*
+		if (message.checkAddrPattern(ADDR_WIINUNCHUCK))
 		{	
-		    x = (float) message.get(0).floatValue();
-			y = (float) message.get(1).floatValue();  
+		//    x = (float) message.get(0).floatValue();
+		//	y = (float) message.get(1).floatValue();  
 			
-			System.out.println("(" + x + "," + y + "y"+ ")");
+			System.out.println(message);
 			
-			posX.update( map(x, 0, 1, 0, width) ) ;
-			posY.update(height - map(y, 0, 1, 0, height)) ;
-			curLocation = map.getLocationFromScreenPosition(posX.value(), posY.value());
-		}*/
+		//	posX.update( map(x, 0, 1, 0, width) ) ;
+		//	posY.update(height - map(y, 0, 1, 0, height)) ;
+		//	curLocation = map.getLocationFromScreenPosition(posX.value(), posY.value());
+		} */
 
 	 }
  
@@ -249,6 +258,11 @@ import oscP5.*;
 			 markers.get(i).draw();
 		 }
 		 
+	 }
+	 
+	 void nunChuckCursor(float x, float y)
+	 {
+		 nunChuckHandler.handleNunchuck(x, y);
 	 }
 	 
 	 public void mouseClicked() //disabled for now
