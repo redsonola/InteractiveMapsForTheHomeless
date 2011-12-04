@@ -1,0 +1,25 @@
+package com.somethingfurry.maps_and_then_some;
+
+import java.util.ArrayList;
+
+public class DemoInfo {
+	
+	public enum DemographicType { BATHROOMS, EAT, ELECTRICITY, SLEEP, HANGOUT, 
+	AGE, TIME_ON_STREET, PERCENT_MALE, PERCENT_FEMALE,	PREGNANT, RELATIONSHIP,	PLACE_OF_ORIGIN,
+	SUICIDE_ATTEMPT, SIBLINGS };
+	
+	public String[] _displayStrings = {"Bathroom Use: ", "Eating Use: ", "Electricity Use: ", "Sleep Use: ",
+			"Hangout Use: ", "Age Use: ", "Time on Street: ", "Male: ", "Female: ",	"Pregnant: ", "Relationship Status: ",	
+			"Suicide Attempts (by users): ", "Number of Siblings: "};
+	
+	ArrayList _fields; 
+	ArrayList _values;	
+	
+
+	DemoInfo()
+	{
+		
+		
+	}	
+	
+}

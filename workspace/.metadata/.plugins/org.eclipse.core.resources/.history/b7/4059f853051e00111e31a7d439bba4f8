@@ -1,0 +1,30 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+
+public class NunChuckHandler {
+	
+	private boolean _nunChuckHome = true;
+	private float _px = 0;
+	private float _py = 0;
+	private PApplet _display;
+	private float homeXY[] = { (float)0.48431373, (float)0.5 };
+	private final static float THRESH = (float) 0.01;
+	
+	NunChuckHandler(PApplet display)
+	{
+		_display = display; 
+		_px = homeXY[0];
+		_py = homeXY[1];
+	}
+	
+	public void handleNunchuck(float x, float y)
+	{
+		boolean prevHome = _nunChuckHome; 
+		_nunChuckHome = ( ( Math.abs(x - homeXY[0] ) <= THRESH) && ( Math.abs(y - homeXY[1] ) <= THRESH) );
+		px
+		
+		
+	}
+	
+}

@@ -1,0 +1,10 @@
+package com.somethingfurry.maps_and_then_some;
+
+import java.util.ArrayList;
+
+public class DemoInfo {
+
+	ArrayList fields; 
+	ArrayList values;
+	
+}

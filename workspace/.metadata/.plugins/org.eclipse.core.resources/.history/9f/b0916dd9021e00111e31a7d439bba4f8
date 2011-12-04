@@ -1,0 +1,9 @@
+package com.somethingfurry.maps_and_then_some;
+
+public class NunChuckHandler {
+	
+	private boolean _nunChuckHome = true;
+	private float dx = 0;
+	private float dy = 0; 
+	
+}

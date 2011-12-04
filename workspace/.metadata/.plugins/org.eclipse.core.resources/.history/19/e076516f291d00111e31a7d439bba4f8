@@ -1,0 +1,18 @@
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import de.fhpotsdam.unfolding.Map;
+import de.fhpotsdam.unfolding.geo.Location;
+
+public class DemographcMapMarker extends MediaMarker {
+	
+	DemoInfo _demo; 
+
+	DemographcMapMarker(Location location, PApplet display, Map map, LocationType locationType) {
+		super(location, display, map, locationType);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+}

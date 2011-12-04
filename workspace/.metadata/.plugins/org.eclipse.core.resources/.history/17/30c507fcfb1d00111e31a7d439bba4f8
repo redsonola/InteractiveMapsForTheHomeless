@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package com.somethingfurry.maps_and_then_some;
+
+import processing.core.PApplet;
+import de.fhpotsdam.unfolding.Map;
+import de.fhpotsdam.unfolding.geo.Location;
+
+/**
+ * @author courtney
+ *
+ */
+public class ReallyZoomedOutMarker extends LocationMapMarker {
+
+	/**
+	 * @param location
+	 * @param display
+	 * @param map
+	 */
+	protected static final float ZOOM_DISPLAY_THRESH_RLY = (float) 14.0; 	
+	
+	public ReallyZoomedOutMarker(Location location, PApplet display, Map map) {
+		super(location, display, map, ZOOM_DISPLAY_THRESH_RLY);
+		// TODO Auto-generated constructor stub
+	}
+
+}
