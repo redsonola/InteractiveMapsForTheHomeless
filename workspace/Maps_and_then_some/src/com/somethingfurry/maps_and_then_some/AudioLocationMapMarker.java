@@ -24,7 +24,7 @@ public class AudioLocationMapMarker extends MediaMarker {
 
 	AudioLocationMapMarker(Location location, PApplet display, Map map, LocationType locationType, Minim minim, String filename)
 	{
-		super(location, display, map, locationType);
+		super(location, display, map, locationType, LocationTypeDisplay.MediaType.AUDIO);
 		_minim = minim; 	
 		_filename = filename; 
 		_myFont = _display.createFont("Arial", _fontSize);

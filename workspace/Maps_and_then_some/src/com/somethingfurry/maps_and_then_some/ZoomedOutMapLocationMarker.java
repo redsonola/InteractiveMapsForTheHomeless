@@ -13,6 +13,7 @@ public class ZoomedOutMapLocationMarker extends LocationMapMarker{
 		ZoomedOutMapLocationMarker(Location location, PApplet display, Map map)
 		{
 			super(location, display, map, LocationMapMarker.ZOOM_DISPLAY_THRESH);	
+			_zoomDisplayHigher = ZOOM_DISPLAY_THRESH_RLY;
 		}
 		
 		//show mediaType
@@ -25,7 +26,8 @@ public class ZoomedOutMapLocationMarker extends LocationMapMarker{
 		//show marker or not?
 		protected boolean zoomThres()
 		{
-			return ( _zoomDisplay > _map.getZoomLevel() && _zoomDisplayHigher <= _map.getZoomLevel() );
+			System.out.println("zoomDisplay in ZoomedMarker is: " + _map.getZoomLevel() + "& we are displaying? "+(_zoomDisplay >= _map.getZoomLevel()));			
+			return ( _zoomDisplay > _map.getZoomLevel() &&  _zoomDisplayHigher <= _map.getZoomLevel() );
 		}
 
 	}

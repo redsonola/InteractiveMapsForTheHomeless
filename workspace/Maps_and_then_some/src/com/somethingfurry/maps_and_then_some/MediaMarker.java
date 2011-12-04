@@ -1,5 +1,7 @@
 package com.somethingfurry.maps_and_then_some;
 
+import com.somethingfurry.maps_and_then_some.LocationTypeDisplay.MediaType;
+
 import processing.core.PApplet;
 import processing.core.PImage;
 import de.fhpotsdam.unfolding.Map;
@@ -18,19 +20,16 @@ public class MediaMarker extends LocationMapMarker {
 	protected boolean _presentMedia = false; 
 	protected boolean _suppressIcon = false;
 	protected LocationTypeDisplay _locationType;  //TODO: write locations 
-	
 
-
-
-	MediaMarker(Location location, PApplet display, Map map, LocationType locationType)
+	MediaMarker(Location location, PApplet display, Map map, LocationType locationType, LocationTypeDisplay.MediaType mType)
 	{
-		super(location, display, map, LocationMapMarker.ZOOM_DISPLAY_THRESH);	
-		_locationType = new LocationTypeDisplay(locationType, _display);
+		super(location, display, map, LocationMapMarker.ZOOM_DISPLAY_THRESH );	
+		_locationType = new LocationTypeDisplay(locationType, _display, mType);
 	}
 	
 	protected boolean zoomThres()
 	{
-		//System.out.println("zoomDisplay in MediaMarker is: " + _map.getZoomLevel());
+		System.out.println("zoomDisplay in MediaMarker is: " + _map.getZoomLevel() + "& we are displaying? "+(_zoomDisplay <= _map.getZoomLevel()));
 		return ( _zoomDisplay <= _map.getZoomLevel());
 	}
 	

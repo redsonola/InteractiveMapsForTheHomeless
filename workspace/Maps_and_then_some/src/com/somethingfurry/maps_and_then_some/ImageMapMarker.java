@@ -12,20 +12,20 @@ public class ImageMapMarker extends MediaMarker {
 	protected boolean _defaults = false;	
 	PFont _myFont;
 	
-	protected static final int BORDER_SIZE = 50; 
+	protected static final int BORDER_SIZE = 50;
 	
 
-	ImageMapMarker(Location location, PApplet display, Map map, LocationType locationType, int w, int h)
+	ImageMapMarker(Location location, PApplet display, Map map, LocationType locationType,  LocationTypeDisplay.MediaType mType, int w, int h)
 	{
-		super(location, display, map, locationType);	
+		super(location, display, map, locationType, mType);	
 		resize(w, h);
 		_myFont = _display.createFont("Arial", 16);
 		_display.textFont(_myFont);
 	}
 	
-	ImageMapMarker(Location location, PApplet display, Map map, LocationType locationType)
+	ImageMapMarker(Location location, PApplet display, Map map, LocationType locationType,  LocationTypeDisplay.MediaType mType)
 	{
-		this(location, display, map, locationType, 0, 0);	
+		this(location, display, map, locationType, mType, 0, 0);	
 		_defaults = true; 
 	}	
 	
