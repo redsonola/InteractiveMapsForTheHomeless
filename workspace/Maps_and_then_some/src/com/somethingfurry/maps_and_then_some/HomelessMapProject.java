@@ -36,6 +36,8 @@ public class HomelessMapProject extends PApplet {
 	OscP5 oscP5; // object to enable OSC shiz
 	public static final int OSC_PORT = 9000; // max port coz I'm lazy //the port
 												// to listen for OSC messages on
+	public boolean useWii = false; //only know if the accel data is streamed 
+	
 
 	// OSC messages incoming from wiimote / osculator
 	public static final String ADDR_WIIPLUS = "/wii/1/button/Plus";
@@ -46,6 +48,8 @@ public class HomelessMapProject extends PApplet {
 	public static final String ADDR_WIIIR = "/wii/1/ir";
 	public static final String ADDR_WIIA = "/wii/1/button/A";
 	public static final String ADDR_WII1 = "/wii/1/button/1";
+	
+	//not using the nunchuck
 	public static final String ADDR_WIINUNCHUCK = "/wii/1/nunchuk/joy";
 
 	public static final String ADDR_WII2 = "/wii/1/button/2";
@@ -86,7 +90,7 @@ public class HomelessMapProject extends PApplet {
 		oscP5.plug(this, "panning", ADDR_WIIA);
 		oscP5.plug(this, "presentMedia", ADDR_WII1);
 		oscP5.plug(this, "closeMedia", ADDR_WII2);
-		oscP5.plug(this, "nunChuckCursor", ADDR_WIINUNCHUCK);
+		//oscP5.plug(this, "nunChuckCursor", ADDR_WIINUNCHUCK);
 
 		// create the current x, y pos of screen
 		posX = new SmoothedValue();
@@ -108,7 +112,7 @@ public class HomelessMapProject extends PApplet {
 
 		// TODO: add real data and locations
 
-		LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix,
+		/* LocationMapMarker zMarker = new ZoomedOutMapLocationMarker(phoenix,
 				this, map);
 		LocationMapMarker pMarker = new PhotoLocationMapMarker(phoenix, this,
 				map, LocationType.HANGOUT, "nasal_passages.jpg", "jpg", 512,
@@ -130,8 +134,10 @@ public class HomelessMapProject extends PApplet {
 		markers.add(zMarker);
 		// markers.add(pMarker);
 		// markers.add(aMarker);
-		markers.add(dMarker);
+		markers.add(dMarker);  */
 
+		/* Yongtao enters data */
+		
 		// E 7th St.
 
 		 Location e7thSt = new Location(33.4259f, -111.8937f);
@@ -853,30 +859,39 @@ public class HomelessMapProject extends PApplet {
 		 */
 
 		// use the acceleration to change position.
-		/*
-		 * if( message.checkAddrPattern(ADDR_WIIACCEL) ) { y = (float)
-		 * message.get(0).floatValue(); x = (float) message.get(1).floatValue();
-		 * 
-		 * posX.update( map(x, 0, 1, 0, width) ) ; posY.update(height - map(y,
-		 * 0, 1, 0, height)) ; curLocation =
-		 * map.getLocationFromScreenPosition(posX.value(), posY.value());
-		 * 
-		 * // System.out.println("posX: "+ posX.value() + "posY:" +
-		 * posY.value());
-		 * 
-		 * } /* if (message.checkAddrPattern(ADDR_WIINUNCHUCK)) { // x = (float)
-		 * message.get(0).floatValue(); // y = (float)
-		 * message.get(1).floatValue();
-		 * 
-		 * System.out.println(message);
-		 * 
-		 * // posX.update( map(x, 0, 1, 0, width) ) ; // posY.update(height -
-		 * map(y, 0, 1, 0, height)) ; // curLocation =
-		 * map.getLocationFromScreenPosition(posX.value(), posY.value()); }
+		
+		  if( message.checkAddrPattern(ADDR_WIIACCEL) ) { 
+			   useWii = true; //if it gets an osc message here, then yes, use the wii
+			  
+			  	y = (float) message.get(0).floatValue(); 
+			  	x = (float) message.get(1).floatValue();
+		  
+			  	posX.update( map(x, 0, 1, 0, width) ) ; 
+		  		posY.update(height - map(y,0, 1, 0, height)) ; 
+		  		curLocation =map.getLocationFromScreenPosition(posX.value(), posY.value());
+		  
+		  		// System.out.println("posX: "+ posX.value() + "posY:" + posY.value());
+		  
+		  } 
+		  
+		  /* if (message.checkAddrPattern(ADDR_WIINUNCHUCK)) { // x = (float)
+		 message.get(0).floatValue(); // y = (float)
+		 message.get(1).floatValue();
+		  
+		  System.out.println(message);
+		 
+		 // posX.update( map(x, 0, 1, 0, width) ) ; // posY.update(height -
+		  map(y, 0, 1, 0, height)) ; // curLocation =
+		  map.getLocationFromScreenPosition(posX.value(), posY.value()); }
 		 */
 
 	}
-
+	
+	boolean usingWii()
+	{
+		return useWii; 
+	}
+	
 	// increase zoom -- this is the wii.PLUS event handler
 	void zoomIn(int isDown) {
 		if (isDown == 1) {
@@ -940,19 +955,27 @@ public class HomelessMapProject extends PApplet {
 
 	// this is where we draw / dislay shit.
 	public void draw() {
+		if (!useWii) curLocation = map.getLocationFromScreenPosition(mouseX, mouseY);
 		map.draw();
-		fill(0, 0, 0, 255);
-		ellipse(posX.value(), posY.value(), 7, 7);
 
 		if (isPanning) {
 			pan();
+		}
+		
+		for (int i = 0; i < markers.size(); i++) {
+			markers.get(i).drawIcon();
 		}
 
 		// draw
 		for (int i = 0; i < markers.size(); i++) {
 			markers.get(i).draw();
 		}
-
+		
+		if (useWii)
+		{
+			fill(0, 0, 0, 255);
+			ellipse(posX.value(), posY.value(), 7, 7);
+		}
 	}
 
 	void nunChuckCursor(float x, float y) {
@@ -967,6 +990,15 @@ public class HomelessMapProject extends PApplet {
 		 * map.zoomAndPanTo(location, 13); isZoomed = true; } else {
 		 * map.zoomAndPanTo(phoenix, 10); isZoomed = false; }
 		 */
+		for (int i=0; i<markers.size(); i++)
+		{
+			LocationMapMarker m = markers.get(i);
+			if (m instanceof MediaMarker )
+			{
+				m.pressOn(); 
+			}
+		}
+	
 
 	}
 	
@@ -981,6 +1013,19 @@ public class HomelessMapProject extends PApplet {
 			zoomIn(1);
 		} else if (key == '2') {
 			zoomOut(1);
+		} else if (key == '3') {
+			map.zoomAndPanTo(phoenix, 10);  //return to defaults
+			zoom = 10;
+		} else if (key ==' ')
+		{
+			for (int i=0; i<markers.size(); i++)
+			{
+				LocationMapMarker m = markers.get(i);
+				if (m instanceof MediaMarker )
+				{
+					m.pressOff(); 
+				}
+			}
 		}
 	}
 

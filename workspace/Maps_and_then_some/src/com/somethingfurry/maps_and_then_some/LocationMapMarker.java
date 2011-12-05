@@ -34,6 +34,8 @@ public abstract class LocationMapMarker {
 		_zoomDisplay = zoomDisplay;
 	}
 	
+	public void drawIcon(){}
+	
 	//show marker or not?
 	protected  abstract boolean zoomThres();
 	

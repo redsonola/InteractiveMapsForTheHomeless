@@ -11,8 +11,8 @@ import de.fhpotsdam.unfolding.geo.Location;
 //also it will display only when zoomed in
 public class MediaMarker extends LocationMapMarker {
 	 
-	protected int _width = 20; 
-	protected int _height = 20;
+	protected int _width = 40; 
+	protected int _height = 40;
 	protected boolean _over = false; 
 	protected boolean _pressed = false;
 	protected boolean _overWii = false; 
@@ -49,16 +49,20 @@ public class MediaMarker extends LocationMapMarker {
 		_suppressIcon = true; 	//hack hack hack hack ahem.
 	}
 	
-	public void draw()
+	public void drawIcon()
 	{
-		update();
 		if ( zoomThres() & !_suppressIcon)
 		{
 		  _display.fill(215, 0, 0, 100);
 		  
 		  float xy[] = _map.getScreenPositionFromLocation(_location);
 		  _display.image(_locationType.icon(), xy[0], xy[1], _width, _height);
-		}
+		}		
+	}
+	
+	public void draw()
+	{
+		update();
 		if (_presentMedia) presentMedia();
 	}
 	
@@ -89,8 +93,19 @@ public class MediaMarker extends LocationMapMarker {
 	//events for wii
 	public void pressOn()
 	{
-		if (!_presentMedia) onStartMedia();
-		_presentMedia = _overWii || _presentMedia;		
+		if ( ((HomelessMapProject) _display).usingWii() )
+		{
+			if (!_presentMedia) onStartMedia();
+			_presentMedia = _overWii || _presentMedia;	
+		}
+		else
+		{
+			if (_over)
+			{
+				if (!_presentMedia) onStartMedia();
+				_presentMedia = _over || _presentMedia;				
+			}
+		}
 	}
 
 	public void pressOff()
@@ -122,7 +137,7 @@ public class MediaMarker extends LocationMapMarker {
 	  {
 		overRect();
 		overRectWii();
-	    pressed(); 		
+	    //pressed(); 		
 	  }
 	 
 	

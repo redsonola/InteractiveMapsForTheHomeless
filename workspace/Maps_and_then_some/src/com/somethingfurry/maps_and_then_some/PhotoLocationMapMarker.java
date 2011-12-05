@@ -16,7 +16,7 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 	PhotoLocationMapMarker(Location location, PApplet display, Map map, LocationType locationType, String filename, String filetype)
 	{
 		super(location, display, map, locationType, LocationTypeDisplay.MediaType.PHOTO);	
-		setPhoto(filename, filetype);
+		setPhoto(filename, filetype, 648, 484);
 		testExistence();
 
 	}

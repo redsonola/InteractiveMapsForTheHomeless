@@ -14,16 +14,16 @@ public class VideoLocationMapMarker extends ImageMapMarker {
 	
 	VideoLocationMapMarker(Location location, PApplet display, Map map, LocationType locationType, String filename)
 	{
-		super(location, display, map, locationType, LocationTypeDisplay.MediaType.VIDEO);	
+		super(location, display, map, locationType, LocationTypeDisplay.MediaType.VIDEO, 620, 360);	
 		_filename = filename; 
-		testExistence();
+		//testExistence();
 	}
 	
 	VideoLocationMapMarker(Location location, PApplet display, Map map,  LocationType locationType, String filename, int w, int h)
 	{
 		super(location, display, map, locationType, LocationTypeDisplay.MediaType.VIDEO, w, h);
 		_filename = filename; 	
-		testExistence();
+		//testExistence();
 	}	
 	
 	public void testExistence()

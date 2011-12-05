@@ -27,7 +27,7 @@ public class AudioLocationMapMarker extends ImageMapMarker {
 
 	AudioLocationMapMarker(Location location, PApplet display, Map map, LocationType locationType, Minim minim, String filename)
 	{
-		super(location, display, map, locationType, LocationTypeDisplay.MediaType.AUDIO);
+		super(location, display, map, locationType, LocationTypeDisplay.MediaType.AUDIO, 320, 256);
 		_minim = minim; 	
 		_filename = filename; 
 		_myFont = _display.createFont("Arial", _fontSize);
@@ -48,7 +48,7 @@ public class AudioLocationMapMarker extends ImageMapMarker {
 	public void presentMedia()
 	{
 		int xy[] = drawBorder();
-		_display.image(_img, xy[0]+BORDER_SIZE/2,  xy[1]+BORDER_SIZE/2, _img.width, _img.height);
+		_display.image(_img, xy[0]+BORDER_SIZE/2,  xy[1]+BORDER_SIZE/2, _width, _height);
 	}
 	
 	private int box_len()
