@@ -48,7 +48,7 @@ public class AudioLocationMapMarker extends ImageMapMarker {
 	public void presentMedia()
 	{
 		int xy[] = drawBorder();
-		_display.image(_img, xy[0]+BORDER_SIZE/2,  xy[1]+BORDER_SIZE/2, _width, _height);
+		_display.image(_img, xy[0]+BORDER_SIZE,  xy[1]+BORDER_SIZE, _width, _height);
 	}
 	
 	private int box_len()
@@ -61,7 +61,8 @@ public class AudioLocationMapMarker extends ImageMapMarker {
 	//stop audio
 	public void onCloseMedia()
 	{
-		_player.close();
+		if(_player!=null)
+			_player.close();
 	}
 
 	public void testExistence()

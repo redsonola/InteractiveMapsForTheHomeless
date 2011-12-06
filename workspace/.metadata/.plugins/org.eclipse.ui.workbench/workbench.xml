@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="59" version="2.0">
 <workbenchAdvisor/>
-<window height="985" width="1505" x="239" y="44">
+<window height="985" width="1690" x="168" y="137">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.pde.runtime.LogView"/>
 </fastViewData>
@@ -38,14 +38,18 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="7"/>
+<part id="6"/>
 <part id="8"/>
 <part id="4"/>
 <part id="5"/>
-<part id="3"/>
-<part id="9"/>
-<part id="6"/>
-<part id="7"/>
 <part id="10"/>
+<part id="11"/>
+<part id="9"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
 </presentation>
 </folder>
 </info>
@@ -56,46 +60,65 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HomelessMapProject.java" partName="HomelessMapProject.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/HomelessMapProject.java" title="HomelessMapProject.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/HomelessMapProject.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/HomelessMapProject.java"/>
-<editorState selectionHorizontalPixel="29" selectionLength="0" selectionOffset="3561" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="22557" selectionTopPixel="8586"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SmoothedValue.java" partName="SmoothedValue.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/SmoothedValue.java" title="SmoothedValue.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/SmoothedValue.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/SmoothedValue.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="646" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="227" selectionTopPixel="63"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationMapMarker.java" partName="LocationMapMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationMapMarker.java" title="LocationMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationMapMarker.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationMapMarker.java" partName="LocationMapMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationMapMarker.java" title="LocationMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationMapMarker.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationMapMarker.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1178" selectionTopPixel="162"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1291" selectionTopPixel="224"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PhotoLocationMapMarker.java" partName="PhotoLocationMapMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/PhotoLocationMapMarker.java" title="PhotoLocationMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/PhotoLocationMapMarker.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/PhotoLocationMapMarker.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="903" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="575" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VideoLocationMapMarker.java" partName="VideoLocationMapMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/VideoLocationMapMarker.java" title="VideoLocationMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/VideoLocationMapMarker.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/VideoLocationMapMarker.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="42" selectionOffset="1085" selectionTopPixel="312"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="488" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AudioLocationMapMarker.java" partName="AudioLocationMapMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/AudioLocationMapMarker.java" title="AudioLocationMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/AudioLocationMapMarker.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/AudioLocationMapMarker.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1044" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1412" selectionTopPixel="359"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ZoomedOutMapLocationMarker.java" partName="ZoomedOutMapLocationMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ZoomedOutMapLocationMarker.java" title="ZoomedOutMapLocationMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ZoomedOutMapLocationMarker.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ZoomedOutMapLocationMarker.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="459" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="824" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MediaMarker.java" partName="MediaMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/MediaMarker.java" title="MediaMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/MediaMarker.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/MediaMarker.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2886" selectionTopPixel="1081"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="404" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageMapMarker.java" partName="ImageMapMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ImageMapMarker.java" title="ImageMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ImageMapMarker.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ImageMapMarker.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="814" selectionTopPixel="117"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="393" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationTypeDisplay.java" partName="LocationTypeDisplay.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationTypeDisplay.java" title="LocationTypeDisplay.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationTypeDisplay.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationTypeDisplay.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="125" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="972" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemographcMapMarker.java" partName="DemographcMapMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemographcMapMarker.java" title="DemographcMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemographcMapMarker.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemographcMapMarker.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="749" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemoInfo.java" partName="DemoInfo.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemoInfo.java" title="DemoInfo.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemoInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemoInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="12" selectionOffset="368" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReallyZoomedOutMarker.java" partName="ReallyZoomedOutMarker.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ReallyZoomedOutMarker.java" title="ReallyZoomedOutMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ReallyZoomedOutMarker.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ReallyZoomedOutMarker.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="202" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NunChuckHandler.java" partName="NunChuckHandler.java" path="/Users/courtney/Documents/eclipse/InteractiveMapsForTheHomeless/workspace/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/NunChuckHandler.java" title="NunChuckHandler.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/NunChuckHandler.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/NunChuckHandler.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1214" selectionTopPixel="149"/>
 </editor>
 </editors>
 <views>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
@@ -130,10 +153,9 @@
 <filteredTreeFindHistory/>
 </viewState>
 </view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
-<viewState/>
+<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers">
+<viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
-<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
 </views>
 <perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
@@ -224,7 +246,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.23962517" ratioLeft="358" ratioRight="1136" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.6998536" ratioLeft="478" ratioRight="205" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottomRight" ratio="0.75250834" ratioLeft="675" ratioRight="222" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.AllMarkersView" label="Markers"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
@@ -374,162 +396,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationMapMarker.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/MediaMarker.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/HomelessMapProject.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/VideoLocationMapMarker.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/PhotoLocationMapMarker.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/AudioLocationMapMarker.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ZoomedOutMapLocationMarker.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/HomelessMapProject.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemoInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationTypeDisplay.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationMapMarker.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/VideoLocationMapMarker.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemographcMapMarker.java"/>
 </editors>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6139" y="5"/>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="25033" y="8"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2452" y="0"/>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="2942" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="2625" y="0"/>
+</item>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="2960" y="8"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="25033" y="8"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="27683" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="27728" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="27843" y="0"/>
+</item>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="2960" y="8"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="27843" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="27774" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="27843" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="22907" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="22837" y="0"/>
+</item>
+<item historyLabel="LocationTypeDisplay.java" index="5">
+<position info="not_deleted" x="972" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
 <position/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6139" y="5"/>
+<item historyLabel="PhotoLocationMapMarker.java" index="1">
+<position info="not_deleted" x="660" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="4903" y="0"/>
+</item>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="2960" y="8"/>
+</item>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="1429" y="24"/>
+</item>
+<item historyLabel="LocationMapMarker.java" index="6">
+<position info="not_deleted" x="1291" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="26298" y="0"/>
+</item>
+<item historyLabel="AudioLocationMapMarker.java" index="2">
+<position info="not_deleted" x="1159" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="26298" y="0"/>
+</item>
+<item historyLabel="PhotoLocationMapMarker.java" index="1">
+<position info="not_deleted" x="575" y="0"/>
+</item>
+<item historyLabel="VideoLocationMapMarker.java" index="7">
+<position info="not_deleted" x="488" y="0"/>
+</item>
+<item historyLabel="HomelessMapProject.java" index="3">
 <position/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="627" y="18"/>
+<item historyLabel="DemoInfo.java" index="4">
+<position info="not_deleted" x="765" y="3"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
+<item historyLabel="HomelessMapProject.java" index="3">
 <position/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2593" y="0"/>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="755" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2389" y="38"/>
+<item historyLabel="PhotoLocationMapMarker.java" index="1">
+<position info="not_deleted" x="575" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2451" y="0"/>
+<item historyLabel="VideoLocationMapMarker.java" index="7">
+<position info="not_deleted" x="488" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2470" y="0"/>
+<item historyLabel="DemoInfo.java" index="4">
+<position info="not_deleted" x="765" y="3"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2504" y="0"/>
+<item historyLabel="AudioLocationMapMarker.java" index="2">
+<position info="not_deleted" x="1159" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="3128" y="0"/>
+<item historyLabel="DemoInfo.java" index="4">
+<position info="not_deleted" x="765" y="3"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2679" y="0"/>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2634" y="0"/>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="755" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2694" y="0"/>
+<item historyLabel="DemoInfo.java" index="4">
+<position info="not_deleted" x="765" y="3"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="627" y="18"/>
+<item historyLabel="LocationTypeDisplay.java" index="5">
+<position info="not_deleted" x="972" y="0"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="3198" y="0"/>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="5094" y="0"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="3252" y="0"/>
+<item historyLabel="DemoInfo.java" index="4">
+<position info="not_deleted" x="765" y="3"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="3162" y="4"/>
+<item historyLabel="DemographcMapMarker.java" index="8">
+<position info="not_deleted" x="749" y="0"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6284" y="0"/>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="16030" y="0"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6354" y="0"/>
+<item historyLabel="AudioLocationMapMarker.java" index="2">
+<position info="not_deleted" x="1159" y="0"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6112" y="0"/>
+<item historyLabel="MediaMarker.java" index="0">
+<position info="not_deleted" x="404" y="0"/>
 </item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2694" y="0"/>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="16030" y="0"/>
 </item>
-<item historyLabel="LocationMapMarker.java" index="0">
-<position info="not_deleted" x="1235" y="50"/>
+<item historyLabel="AudioLocationMapMarker.java" index="2">
+<position info="not_deleted" x="1412" y="0"/>
 </item>
-<item historyLabel="LocationMapMarker.java" index="0">
-<position info="not_deleted" x="1604" y="0"/>
+<item historyLabel="HomelessMapProject.java" index="3">
+<position info="not_deleted" x="22557" y="0"/>
 </item>
-<item historyLabel="LocationMapMarker.java" index="0">
-<position info="not_deleted" x="1419" y="0"/>
+<item historyLabel="DemographcMapMarker.java" index="8">
+<position info="not_deleted" x="749" y="0"/>
 </item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6112" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6383" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6401" y="0"/>
-</item>
-<item historyLabel="LocationMapMarker.java" index="0">
-<position info="not_deleted" x="1419" y="0"/>
-</item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2694" y="0"/>
-</item>
-<item historyLabel="LocationMapMarker.java" index="0">
-<position info="not_deleted" x="1419" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6401" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6586" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6063" y="0"/>
-</item>
-<item historyLabel="VideoLocationMapMarker.java" index="3">
-<position info="not_deleted" x="1085" y="42"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="6063" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="5371" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="5364" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="5500" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="5510" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="5528" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="4468" y="0"/>
-</item>
-<item historyLabel="MediaMarker.java" index="1">
-<position info="not_deleted" x="2886" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="3561" y="0"/>
-</item>
-<item historyLabel="AudioLocationMapMarker.java" index="4">
-<position info="not_deleted" x="1044" y="0"/>
-</item>
-<item historyLabel="ZoomedOutMapLocationMarker.java" index="5">
-<position info="not_deleted" x="459" y="0"/>
-</item>
-<item historyLabel="HomelessMapProject.java" index="2">
-<position info="not_deleted" x="3561" y="0"/>
-</item>
-<item active="true" historyLabel="LocationMapMarker.java" index="0">
-<position info="not_deleted" x="1419" y="0"/>
+<item active="true" historyLabel="DemoInfo.java" index="4">
+<position info="not_deleted" x="765" y="3"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -549,6 +574,18 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NunChuckHandler.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/NunChuckHandler.java">
+<persistable path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/NunChuckHandler.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReallyZoomedOutMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ReallyZoomedOutMarker.java">
+<persistable path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/ReallyZoomedOutMarker.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemoInfo.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemoInfo.java">
+<persistable path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemoInfo.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemographcMapMarker.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemographcMapMarker.java">
+<persistable path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/DemographcMapMarker.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationTypeDisplay.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationTypeDisplay.java">
 <persistable path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/LocationTypeDisplay.java"/>
 </file>
@@ -581,18 +618,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SmoothedValue.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/SmoothedValue.java">
 <persistable path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/SmoothedValue.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="PApplet.class" tooltip="processing.core.PApplet">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Maps_and_then_some/libs\/Java\/core.jar&lt;processing.core(PApplet.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyInteractiveMap.java" tooltip="Maps_and_then_some/src/MyInteractiveMap.java">
-<persistable path="/Maps_and_then_some/src/MyInteractiveMap.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Stripe.java" tooltip="Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/Stripe.java">
-<persistable path="/Maps_and_then_some/src/com/somethingfurry/maps_and_then_some/Stripe.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Stripe.java" tooltip="SampleProcessingSketch/src/Stripe.java">
-<persistable path="/SampleProcessingSketch/src/Stripe.java"/>
 </file>
 </mruList>
 </workbench>

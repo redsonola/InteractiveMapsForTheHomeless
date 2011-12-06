@@ -93,17 +93,20 @@ public class MediaMarker extends LocationMapMarker {
 	//events for wii
 	public void pressOn()
 	{
-		if ( ((HomelessMapProject) _display).usingWii() )
+		if (zoomThres())
 		{
-			if (!_presentMedia) onStartMedia();
-			_presentMedia = _overWii || _presentMedia;	
-		}
-		else
-		{
-			if (_over)
+			if ( ((HomelessMapProject) _display).usingWii() && _overWii)
 			{
 				if (!_presentMedia) onStartMedia();
-				_presentMedia = _over || _presentMedia;				
+				_presentMedia = _overWii || _presentMedia;	
+			}
+			else
+			{
+				if (_over)
+				{
+					if (!_presentMedia) onStartMedia();
+					_presentMedia = _over || _presentMedia;				
+				}
 			}
 		}
 	}
@@ -111,7 +114,7 @@ public class MediaMarker extends LocationMapMarker {
 	public void pressOff()
 	{
 		if (_presentMedia) onCloseMedia();
-		_presentMedia = false;		
+		_presentMedia = false;	
 	}	
 	
 	 //TODO have a wii-pressed flag in display... COMING!!

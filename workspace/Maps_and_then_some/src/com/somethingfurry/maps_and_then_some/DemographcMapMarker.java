@@ -7,8 +7,8 @@ import de.fhpotsdam.unfolding.geo.Location;
 public class DemographcMapMarker extends ImageMapMarker {
 	
 	DemoInfo _demo; 
-	private static final int _w = 300; 
-	private static final int _h = 300; 
+	private static final int _w = 550; 
+	private static final int _h = 600; 
 	
 
 	DemographcMapMarker(Location location, PApplet display, Map map, DemoInfo demo) {

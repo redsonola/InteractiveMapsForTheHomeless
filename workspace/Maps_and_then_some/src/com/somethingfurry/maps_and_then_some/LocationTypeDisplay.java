@@ -13,7 +13,7 @@ public class LocationTypeDisplay {
 	protected LocationMapMarker.LocationType _locationType;
 	protected MediaType _mediaType;	
 	protected String _text;
-	protected String _iconFile;
+	public String _iconFile;
 	protected PImage _icon;
 	protected PApplet _display;
 	

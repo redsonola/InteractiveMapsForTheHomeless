@@ -3,30 +3,22 @@ package com.somethingfurry.maps_and_then_some;
 public class SmoothedValue {
 	private float[] smoothingArray; 
 	private int smoothValue = 5;
-	private int index = 0; 
-	private int _val =0 ;
-	private boolean nunChukMode = true;
-	
+	private int index = 0; 	
 	private int val = 0;
 	
 	SmoothedValue(int len)
 	{
 		smoothValue = len;
 		smoothingArray = new float[smoothValue];
-		nunChukMode = true; 
 	}
 	
 	SmoothedValue()
 	{
-		this(5); 
+		this(13); 
 	}
-
-	void setNunMode(boolean mode){ nunChukMode = mode; }
 	
 	void update(float num)
 	{
-		if (!nunChukMode)
-		{
 			float sum = 0;
 
 			smoothingArray[index] = num;
@@ -38,12 +30,9 @@ public class SmoothedValue {
 			{
 				sum += smoothingArray[i];
 			}
-			val = (int) ( sum / smoothingArray.length); 	
-		}
-		else _val =(int) num; 
-		
+			val = (int) ( sum / smoothingArray.length); 			
 	}
 	
-	public int value(){ if (!nunChukMode) return val; else return _val;}
+	public int value(){return val;}
 
 }

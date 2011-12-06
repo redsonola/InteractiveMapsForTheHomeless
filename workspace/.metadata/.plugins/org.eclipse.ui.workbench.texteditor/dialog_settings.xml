@@ -2,24 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="243" key="DIALOG_WIDTH"/>
-		<item value="108" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="1316" key="DIALOG_X_ORIGIN"/>
 		<item value="379" key="DIALOG_HEIGHT"/>
-		<item value="820" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="System.out.println" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
-			<item value="System.out.println"/>
-			<item value="zoomDisplay"/>
+			<item value="aiff"/>
+			<item value="17_E.7th_St._IMG_1397.jpg"/>
+			<item value="17_E.7th_St._IMG_1397.JPG"/>
 			<item value="draw"/>
+			<item value="414_Mill_Ave.aiff"/>
+			<item value="119_Ash_and_University_IMG_1411.JPG"/>
+			<item value="17_E.7th_St.mov"/>
+			<item value="17_E.7th_St_MG_1394 copy.JPG"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 		</list>
 	</section>
 </section>

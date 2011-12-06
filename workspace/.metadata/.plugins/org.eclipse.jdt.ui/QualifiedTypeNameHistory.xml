@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="processing.core.PFont"/>
-<fullyQualifiedTypeName name="processing.core.PImage"/>
-<fullyQualifiedTypeName name="processing.core.PApplet"/>
 <fullyQualifiedTypeName name="com.somethingfurry.maps_and_then_some.LocationMapMarker.LocationType"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.somethingfurry.maps_and_then_some.DemoInfo.DemographicType"/>
+<fullyQualifiedTypeName name="processing.core.PApplet"/>
+<fullyQualifiedTypeName name="processing.core.PImage"/>
 </qualifiedTypeNameHistroy>

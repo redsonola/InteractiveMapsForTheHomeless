@@ -58,7 +58,7 @@ public class PhotoLocationMapMarker extends ImageMapMarker {
 	//event class for when closing media
 	public void onCloseMedia()
 	{
-		_img.delete();
+		//if (_img!=null) _img.delete();
 	}	
 	
 	
